@@ -1,6 +1,7 @@
 package com.talentLMS.UI.helper;
 
 import com.talentLMS.UI.driverFactory.Driver;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,6 +31,14 @@ public class WebElementActions {
 
     public WebElementActions sendKeys(WebElement element,String txt){
         waitElementToBeDisplayed(element);
+        element.sendKeys(txt);
+        return this;
+    }
+
+    public WebElementActions sendKeysWithClear(WebElement element,String txt){
+        waitElementToBeDisplayed(element);
+        element.sendKeys(Keys.CONTROL + "a");
+        element.sendKeys(Keys.DELETE);
         element.sendKeys(txt);
         return this;
     }

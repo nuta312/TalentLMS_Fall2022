@@ -9,17 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
 
-
-    @FindBy(xpath = "//a[text()='Home']")
-    public WebElement homeBtn;
-
-    @FindBy(id = "tl-cms-nav-login")
-    public WebElement loginBtn;
-
-    @FindBy(css = ".avatar-square")
-    public WebElement digitalNomadsLogo;
-
-    @FindBy(id = "tl-shared-username")
+    @FindBy(xpath = "//input[@name='login']")
     public WebElement usernameInput;
 
     @FindBy(xpath = "//input[@type='password']")
@@ -32,13 +22,7 @@ public class LoginPage extends BasePage {
     public WebElement loginErrMess;
 
 
-    public LoginPage clickLoginBtn(){
-        elementActions.click(loginBtn);
-        return this;
-    }
-
     public LoginPage fillUpUsernameAndPassword(String userName,String password){
-        clickLoginBtn();
         elementActions.sendKeys(usernameInput,userName)
                 .sendKeys(passwordInput,password)
                 .click(submitLoginBtn);
