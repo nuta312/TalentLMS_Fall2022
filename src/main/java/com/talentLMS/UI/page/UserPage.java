@@ -4,6 +4,11 @@ package com.talentLMS.UI.page;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
+/**
+ * @author Gulnara Mairykova
+ */
+
 public class UserPage extends BasePage {
     @FindBy(xpath = "//th[@class='tl-align-left sorting']")
     public WebElement columnUser;
