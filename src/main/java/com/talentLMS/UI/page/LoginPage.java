@@ -1,5 +1,6 @@
 package com.talentLMS.UI.page;
 
+import com.talentLMS.UI.dataProviders.ConfigReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -21,10 +22,9 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//div[@class='toast-message']")
     public WebElement loginErrMess;
 
-
-    public LoginPage fillUpUsernameAndPassword(String userName,String password){
-        elementActions.sendKeys(usernameInput,userName)
-                .sendKeys(passwordInput,password)
+    public LoginPage fillUpUsernameAndPassword(){
+        elementActions.sendKeys(usernameInput,ConfigReader.getProperty("username"))
+                .sendKeys(passwordInput,ConfigReader.getProperty("password"))
                 .click(submitLoginBtn);
         return this;
     }

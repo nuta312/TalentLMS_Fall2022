@@ -13,11 +13,6 @@ import uiTests.BaseUiTest;
 @Epic("Login")
 public class LoginTests extends BaseUiTest {
 
-    @BeforeMethod
-    public void openLoginPage(){
-        driver.navigate().to(ConfigReader.getProperty("qa_env"));
-    }
-
 
     @Test
     @Description("Verify that user can login with valid credentials")
