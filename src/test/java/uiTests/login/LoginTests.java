@@ -27,7 +27,6 @@ public class LoginTests extends BaseUiTest {
     @Description("Verify that user can login with valid credentials")
     @Feature("Login")
     public void createNewUserTest(){
-
         // TODO
     }
 

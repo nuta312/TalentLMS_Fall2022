@@ -19,7 +19,10 @@ public class ChromeWebDriver {
         options.addArguments("--start-maximized");
         options.addArguments("--window-size=1920,1080");
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
         if (Boolean.parseBoolean(ConfigReader.getProperty("headless"))){
             options.addArguments("--headless");
         }
