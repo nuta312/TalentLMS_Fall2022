@@ -6,7 +6,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 import java.time.Duration;
 /**
- * @author Nursultan Musakunov
+ * @author Aman Omorbekov
  */
 public class EdgeWebDriver {
 

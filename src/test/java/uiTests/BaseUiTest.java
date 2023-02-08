@@ -1,5 +1,6 @@
 package uiTests;
 
+import com.talentLMS.UI.dataProviders.ConfigReader;
 import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
 import com.talentLMS.UI.page.AddCoursesPage;
@@ -23,8 +24,11 @@ public abstract class BaseUiTest {
         loginPage = new LoginPage();
         webElementActions = new WebElementActions();
         driver = Driver.getDriver();
+        driver.navigate().to(ConfigReader.getProperty("qa_env"));
         loginPage.fillUpUsernameAndPassword("amanzadr", "amanzadr");
-        addCoursesPage.clickAddCourses1();
+//        addCoursesPage.clickAddCourses1();
+
+
 
     }
 
