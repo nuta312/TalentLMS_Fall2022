@@ -1,6 +1,6 @@
 package com.talentLMS.UI.driverFactory;
 /**
- * @author Nursultan Musakunov
+ * @author Aman Omorbekov
  */
 public class SafariWebDriver {
 }

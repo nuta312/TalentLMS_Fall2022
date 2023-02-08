@@ -5,7 +5,7 @@ import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
 import org.openqa.selenium.support.PageFactory;
 /**
- * @author Nursultan Musakunov
+ * @author Aman Omorbekov
  */
 public abstract class BasePage {
    public WebElementActions elementActions = new WebElementActions();

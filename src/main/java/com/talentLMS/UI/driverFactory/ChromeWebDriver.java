@@ -8,9 +8,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 /**
- * @author Nursultan Musakunov
+ * @author Aman Omorbekov
  */
-
 public class ChromeWebDriver {
 
     public static WebDriver loadChromeDriver() {
@@ -19,6 +18,9 @@ public class ChromeWebDriver {
         options.addArguments("--disable-extensions");
         options.addArguments("--start-maximized");
         options.addArguments("--window-size=1920,1080");
+
+
+
 
         if (Boolean.parseBoolean(ConfigReader.getProperty("headless"))){
             options.addArguments("--headless");

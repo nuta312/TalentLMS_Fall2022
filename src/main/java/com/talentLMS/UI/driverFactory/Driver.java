@@ -5,7 +5,7 @@ import com.talentLMS.UI.dataProviders.ConfigReader;
 import org.openqa.selenium.WebDriver;
 
 /**
- * @author Nursultan Musakunov
+ * @author Aman Omorbekov
  */
 public class Driver {
 
