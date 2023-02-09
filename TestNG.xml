@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Regression Test Suite" verbose="1"  parallel="classes" thread-count="1">
+<suite name="Smoke Test Suite" verbose="1"  parallel="classes" thread-count="1">
     <listeners>
         <listener class-name="com.talentLMS.UI.utils.AllureReportListener"/>
     </listeners>
