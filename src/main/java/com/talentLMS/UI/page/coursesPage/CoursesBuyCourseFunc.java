@@ -1,4 +1,4 @@
-package com.talentLMS.UI.page.courses;
+package com.talentLMS.UI.page.coursesPage;
 import com.talentLMS.UI.page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -75,18 +75,6 @@ public class CoursesBuyCourseFunc extends BasePage {
 
         @FindBy(xpath = "//span[text()='Providers']")
         public WebElement providersBtn;
-
-        @FindBy(xpath = "//a[@class='tl-provider-title tl-marketplace-selected-provider']")
-        public WebElement iAmlearningBtn;
-
-        @FindBy(xpath = "//span[@title='How to Have a Conversation About Mental Health']")
-        public WebElement videoBtn;
-
-        @FindBy(xpath = "//div[@class='tl-title tl-ellipsis']")
-        public WebElement ProGetTextVideoBtn;
-
-        @FindBy(xpath = "//a[@title='Course Store']")
-        public static WebElement courseStoreBtn3;
 
         @FindBy(xpath = "//div[@class='tl-marketplace-info-text']")
         public WebElement storeButton;

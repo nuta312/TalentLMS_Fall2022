@@ -1,4 +1,4 @@
-package uiTests.SmokeUi;
+package uiTests.coursesTest;
 
 import io.qameta.allure.Epic;
 import org.testng.annotations.Test;

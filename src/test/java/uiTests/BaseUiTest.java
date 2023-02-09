@@ -4,8 +4,9 @@ import com.talentLMS.UI.dataProviders.ConfigReader;
 import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
 import com.talentLMS.UI.page.LoginPage;
-import com.talentLMS.UI.page.courses.CoursesBuyCourseFunc;
+import com.talentLMS.UI.page.coursesPage.CoursesBuyCourseFunc;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public abstract class BaseUiTest {
@@ -30,8 +31,8 @@ public abstract class BaseUiTest {
 
     }
 
-//    @AfterClass
-//    public void tearDown() {
-//        Driver.closeDriver();
-//    }
+    @AfterClass
+    public void tearDown() {
+        Driver.closeDriver();
+    }
 }
