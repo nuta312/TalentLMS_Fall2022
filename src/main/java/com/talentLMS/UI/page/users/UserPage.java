@@ -10,7 +10,8 @@ import org.openqa.selenium.support.FindBy;
  */
 
 public class UserPage extends BasePage {
-    @FindBy(xpath = "//th[@class='tl-align-left sorting']")
+
+    @FindBy(xpath = "//th[@aria-label='User']")
     public WebElement columnUser;
 
     @FindBy(xpath = "(//th[@class='tl-align-left hidden-phone sorting'])[1]")

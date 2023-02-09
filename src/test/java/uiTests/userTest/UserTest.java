@@ -37,14 +37,14 @@ public class UserTest extends BaseUiTest {
     @Description("Verify users webTables Head dates")
     @Feature("Users webTable")
     public void testVerifyColumnsOfUserList(){
+        adminHomePage.clickAdminUserBtn();
         assertEquals(userPage.columnUser.getText(),"USER");
         assertEquals(userPage.columnEmail.getText(),"EMAIL");
         assertEquals(userPage.columnUserType.getText(),"USER TYPE");
         assertEquals(userPage.columnRegistration.getText(),"REGISTRATION");
         assertEquals(userPage.columnLastLogin.getText(),"LAST LOGIN");
         assertEquals(userPage.columnOptions.getText(),"OPTIONS");
+
     }
-
-
 
 }

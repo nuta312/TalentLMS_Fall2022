@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
  */
 
 public class AdminHomePage extends BasePage {
+
     @FindBy(xpath = "(//a[contains(text(),'Users')])[1]")
     public WebElement adminUsersBtn;
 
