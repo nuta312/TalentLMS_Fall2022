@@ -1,0 +1,16 @@
+com\talentLMS\UI\page\users\AdminHomePage.class
+com\talentLMS\UI\dataProviders\MockDataGenerator.class
+com\talentLMS\UI\page\BasePage.class
+com\talentLMS\UI\driverFactory\ChromeWebDriver.class
+com\talentLMS\UI\helper\WebElementActions.class
+com\talentLMS\UI\driverFactory\EdgeWebDriver.class
+com\talentLMS\UI\driverFactory\Driver.class
+com\talentLMS\UI\page\LoginPage.class
+com\talentLMS\UI\page\?ategory\CreateCategory.class
+com\talentLMS\UI\driverFactory\SafariWebDriver.class
+com\talentLMS\UI\page\users\AddUserPage.class
+com\talentLMS\UI\page\?ategory\CategoryPage.class
+com\talentLMS\UI\dataProviders\ConfigReader.class
+com\talentLMS\UI\driverFactory\FireFoxWebDriver.class
+com\talentLMS\UI\page\users\UserPage.class
+com\talentLMS\UI\utils\AllureReportListener.class
