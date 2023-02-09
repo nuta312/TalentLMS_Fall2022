@@ -28,7 +28,7 @@ public class UserPage extends BasePage {
     @FindBy(xpath = "//th[@class='tl-align-center tl-table-operations-cell sorting_disabled']")
     public WebElement columnOption;
 
-    @FindBy(xpath = "//a[text()='Add user']")
+    @FindBy(xpath = "(//a[contains(text(),'Add user')])[1]")
     public WebElement addUserBtn;
 
 
