@@ -5,6 +5,7 @@ import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
 import com.talentLMS.UI.page.LoginPage;
 import com.talentLMS.UI.page.reports.AdminHomePage;
+import com.talentLMS.UI.page.reports.CoursePage;
 import com.talentLMS.UI.page.reports.ReportsPage;
 import com.talentLMS.UI.page.users.AddUserPage;
 import com.talentLMS.UI.page.users.UserPage;
@@ -21,7 +22,7 @@ public abstract class BaseUiTest {
     public ReportsPage reportsPage;
     public UserPage userPage;
     public AddUserPage addUserPage;
-
+    public CoursePage coursePage;
 
 
     @BeforeClass
@@ -36,6 +37,8 @@ public abstract class BaseUiTest {
         userPage = new UserPage();
         adminHomePage = new AdminHomePage();
         addUserPage = new AddUserPage();
+        coursePage = new CoursePage();
+
     }
 
     @AfterClass

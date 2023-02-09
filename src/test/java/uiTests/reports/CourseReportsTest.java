@@ -17,10 +17,8 @@ public class CourseReportsTest extends BaseUiTest {
     @Description("Verify that Admin can click Reports")
     @Feature("Reports")
     public void enterReportTest(){
-        driver.navigate().to(ConfigReader.getProperty("qa_env"));
-        loginPage.fillUpUsernameAndPassword("kutbolsunt", "mansata11");
         adminHomePage.clickReportsBtn();
-        assertEquals(driver.getCurrentUrl(),"https://nomadtest123.talentlms.com/reports/index");
+        assertEquals(driver.getCurrentUrl(),"https://nuta1bema.talentlms.com/reports/index");
     }
 
     @Test (priority = 1)
@@ -28,7 +26,21 @@ public class CourseReportsTest extends BaseUiTest {
     @Feature("Course Reports")
     public void enterCourseReportsTest(){
         reportsPage.clickCourseReportsBtn();
-        assertEquals(driver.getCurrentUrl(),"https://nomadtest123.talentlms.com/reports/course");
+        assertEquals(driver.getCurrentUrl(),"https://nuta1bema.talentlms.com/reports/course");
+
+    }
+
+    @Test(priority = 2)
+    @Description("Verify that Admin can see Course Report result")
+    @Feature("Check Course Reports")
+    public void checkCourseReportsTest(){
+        assertEquals(coursePage.courseText.getText(),"New Courses Name (1212)");
+        assertEquals(coursePage.categoryText.getText(),"Samples");
+        assertEquals(coursePage.assignedLearnersText.getText(),"1");
+        assertEquals(coursePage.completedLearnersText.getText(),"-");
+        coursePage.clickReportsBtn();
+        assertEquals(driver.getCurrentUrl(),"https://nuta1bema.talentlms.com/reports/courseinfo/id:155");
+        webElementActions.pause(6000);
 
     }
 

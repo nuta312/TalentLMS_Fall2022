@@ -1,6 +1,5 @@
 package uiTests.login;
 
-import com.talentLMS.UI.dataProviders.ConfigReader;
 
 
 import io.qameta.allure.Description;
