@@ -21,7 +21,6 @@ public abstract class BaseUiTest {
     public WebDriver driver;
     public UserPage userPage;
 
-    public AdminHomePage adminHomePage;
     public AddUserPage addUserPage;
     public Homepage homepage;
 
