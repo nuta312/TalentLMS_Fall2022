@@ -1,1 +1,0 @@
-{"uuid":"408d59e2-535c-4d35-9a15-fec5519d2aaf","name":"uiTests.login.CoursesTest","children":["ee255223-6022-4081-9f4c-a8a9d15bf0e1"],"befores":[{"name":"setUpUiTest","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1675960184426,"stop":1675960194977}],"afters":[],"start":1675960184343,"stop":1675960198672}
