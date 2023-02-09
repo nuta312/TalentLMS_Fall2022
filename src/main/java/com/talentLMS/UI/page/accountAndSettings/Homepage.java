@@ -63,5 +63,4 @@ public class Homepage extends BasePage {
 
     @FindBy(xpath = "//a[@class='btn btn-primary btn-large']")
     public WebElement upgradeBtn;
-
 }
