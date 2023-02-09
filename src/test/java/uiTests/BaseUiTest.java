@@ -13,6 +13,8 @@ public abstract class BaseUiTest {
     public WebElementActions webElementActions;
     public WebDriver driver;
 
+    public
+
     @BeforeClass
     public void setUpUiTest() {
         loginPage = new LoginPage();
