@@ -29,5 +29,22 @@ public class UserTest extends BaseUiTest {
         assertEquals(addUserPage.coursePage.getText(),"Courses");
     }
 
+    /**
+     * @author Kadyrbekova Nurzhan
+     */
+
+    @Test
+    @Description("Verify users webTables Head dates")
+    @Feature("Users webTable")
+    public void testVerifyColumnsOfUserList(){
+        assertEquals(userPage.columnUser.getText(),"USER");
+        assertEquals(userPage.columnEmail.getText(),"EMAIL");
+        assertEquals(userPage.columnUserType.getText(),"USER TYPE");
+        assertEquals(userPage.columnRegistration.getText(),"REGISTRATION");
+        assertEquals(userPage.columnLastLogin.getText(),"LAST LOGIN");
+        assertEquals(userPage.columnOptions.getText(),"OPTIONS");
+    }
+
+
 
 }
