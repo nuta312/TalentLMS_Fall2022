@@ -4,6 +4,7 @@ import com.talentLMS.UI.dataProviders.ConfigReader;
 import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
 import com.talentLMS.UI.page.LoginPage;
+import com.talentLMS.UI.page.accountAndSettings.Homepage;
 import com.talentLMS.UI.page.users.AddUserPage;
 import com.talentLMS.UI.page.users.AdminHomePage;
 import com.talentLMS.UI.page.users.UserPage;
@@ -20,6 +21,7 @@ public abstract class BaseUiTest {
 
     public AdminHomePage adminHomePage;
     public AddUserPage addUserPage;
+    public Homepage homepage;
 
 
 
@@ -33,10 +35,11 @@ public abstract class BaseUiTest {
         userPage = new UserPage();
         adminHomePage = new AdminHomePage();
         addUserPage = new AddUserPage();
+        homepage = new Homepage();
     }
 
-//    @AfterClass
-//    public void tearDown() {
-//        Driver.closeDriver();
-//    }
+    @AfterClass
+    public void tearDown() {
+        Driver.closeDriver();
+    }
 }
