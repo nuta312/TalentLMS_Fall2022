@@ -22,7 +22,7 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//div[@class='toast-message']")
     public WebElement loginErrMess;
 
-    public LoginPage fillUpUsernameAndPassword(){
+    public LoginPage fillUpUsernameAndPassword(String username, String password){
         elementActions.sendKeys(usernameInput,ConfigReader.getProperty("username"))
                 .sendKeys(passwordInput,ConfigReader.getProperty("password"))
                 .click(submitLoginBtn);
