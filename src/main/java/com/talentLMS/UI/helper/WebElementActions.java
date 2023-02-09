@@ -2,7 +2,9 @@ package com.talentLMS.UI.helper;
 
 import com.talentLMS.UI.driverFactory.Driver;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -10,6 +12,9 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class WebElementActions {
+
+    WebDriver driver;
+
 
     public WebElementActions waitElementToBeClickAble(WebElement element){
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15))
@@ -40,6 +45,12 @@ public class WebElementActions {
         element.sendKeys(Keys.CONTROL + "a");
         element.sendKeys(Keys.DELETE);
         element.sendKeys(txt);
+        return this;
+    }
+
+    public WebElementActions moveTo(WebElement element){
+        Actions actions = new Actions(driver);
+        actions.click(element).moveToElement(element).click().perform();
         return this;
     }
 
