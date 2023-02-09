@@ -4,6 +4,7 @@ import com.talentLMS.UI.dataProviders.ConfigReader;
 import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
 import com.talentLMS.UI.page.LoginPage;
+import com.talentLMS.UI.page.coursesPage.ViewCoursesCatalog;
 import com.talentLMS.UI.page.users.AddUserPage;
 import com.talentLMS.UI.page.users.AdminHomePage;
 import com.talentLMS.UI.page.users.UserPage;
@@ -21,6 +22,8 @@ public abstract class BaseUiTest {
     public AdminHomePage adminHomePage;
     public AddUserPage addUserPage;
 
+    public ViewCoursesCatalog viewCoursesCatalog;
+
 
 
     @BeforeClass
@@ -33,6 +36,7 @@ public abstract class BaseUiTest {
         userPage = new UserPage();
         adminHomePage = new AdminHomePage();
         addUserPage = new AddUserPage();
+        viewCoursesCatalog = new ViewCoursesCatalog();
     }
 
 //    @AfterClass
