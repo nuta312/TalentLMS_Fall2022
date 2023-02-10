@@ -3,6 +3,7 @@ package uiTests;
 import com.talentLMS.UI.dataProviders.ConfigReader;
 import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
+import com.talentLMS.UI.page.accountAndSettings.GamificationPage;
 import com.talentLMS.UI.page.coursesPage.CoursePage;
 import com.talentLMS.UI.page.groupsPage.AddGroupsPage;
 import com.talentLMS.UI.page.reports.ReportsCoursePage;
@@ -36,6 +37,7 @@ public abstract class BaseUiTest {
     public ReportsCoursePage reportsCoursePage;
 
     public AddGroupsPage addGroupsPage;
+    public GamificationPage gamificationPage;
 
 
 
@@ -60,6 +62,7 @@ public abstract class BaseUiTest {
         addGroupsPage = new AddGroupsPage();
         reportsPage = new ReportsPage();
         reportsCoursePage = new ReportsCoursePage();
+        gamificationPage = new GamificationPage();
 
     }
 
