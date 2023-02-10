@@ -10,6 +10,7 @@ import com.talentLMS.UI.page.reports.ReportsPage;
 import com.talentLMS.UI.page.users.AddUserPage;
 import com.talentLMS.UI.page.users.UserPage;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -23,6 +24,7 @@ public abstract class BaseUiTest {
     public UserPage userPage;
     public AddUserPage addUserPage;
     public CoursePage coursePage;
+    public Actions actions;
 
 
     @BeforeClass
@@ -38,6 +40,7 @@ public abstract class BaseUiTest {
         adminHomePage = new AdminHomePage();
         addUserPage = new AddUserPage();
         coursePage = new CoursePage();
+        actions = new Actions(driver);
 
     }
 

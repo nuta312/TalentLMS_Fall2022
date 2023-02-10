@@ -52,4 +52,9 @@ public class WebElementActions {
         return this;
     }
 
+    public WebElementActions moveToElement(WebElement element){
+        moveToElement(element);
+        return this;
+    }
+
 }

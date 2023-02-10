@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
  */
 
 public class AdminHomePage extends BasePage {
-    @FindBy(xpath = "//div[@class='tl-bold-link']//a[contains(text(),'Reports')]")
+    @FindBy(xpath = "//a[contains(text(),'Reports')]")
     public WebElement reports;
 
     public AdminHomePage clickReportsBtn(){
