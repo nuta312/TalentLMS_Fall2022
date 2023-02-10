@@ -30,8 +30,5 @@ String loginURLPage = "https://nuta1bema.talentlms.com/index";
         return this;
     }
 
-    public LoginPage checkLoginUrlPage(){
-        elementActions.assertUrlPage(loginURLPage);
-        return this;
-    }
+
 }

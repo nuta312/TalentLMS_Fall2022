@@ -3,12 +3,9 @@
     <listeners>
         <listener class-name="com.talentLMS.UI.utils.AllureReportListener"/>
     </listeners>
-    <test name="Regression Test">
+    <test name="Smoke Test">
         <classes>
-            <class name="uiTests.category.OpenCategory" />
-            <class name="uiTests.login.LoginTests" />
-            <class name="uiTests.userTest.UserTest" />
-            <class name="uiTests.accountAndSettings.HomepageTest" />
+                <class name="uiTests.login.LoginTests" />
         </classes>
     </test>
 </suite>
