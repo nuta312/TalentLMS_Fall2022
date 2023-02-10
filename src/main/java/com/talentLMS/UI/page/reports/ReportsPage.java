@@ -1,16 +1,19 @@
-package com.talentLMS.UI.page.ReportsPage;
+package com.talentLMS.UI.page.reports;
 
 import com.talentLMS.UI.page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 /**
- * @author Mukashev Atai
- */
+     * @author Kutbolsun Toktonazarov
+     */
 
-public class ReportPage extends BasePage {
+    public class ReportsPage extends BasePage {
+        @FindBy(xpath = "//div[@class='tl-ellipsis']//a[contains(text(),'Course reports')]")
+        public WebElement courseReports;
 
-    @FindBy(xpath = "//a[contains(text(),  'Reports' )]")
-    public WebElement reportBtn;
+        @FindBy(xpath = "//a[contains(text(),  'Reports' )]")
+        public WebElement reportBtn;
 
     @FindBy(xpath = "//a[@data-period='yesterday']")
     public WebElement yesterdayBtn;
@@ -43,5 +46,8 @@ public class ReportPage extends BasePage {
     public WebElement TimelineBtn;
 
 
-
+    public ReportsPage clickCourseReportsBtn(){
+            elementActions.click(courseReports);
+            return this;
+        }
 }
