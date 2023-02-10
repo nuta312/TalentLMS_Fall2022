@@ -34,7 +34,7 @@ public class CourseReportsTest extends BaseUiTest {
     @Description("Verify that Admin can see Course Report result")
     @Feature("Check Course Reports")
     public void checkCourseReportsTest(){
-        System.out.println(coursePage.getListOfCourse());
+//        System.out.println(coursePage.getListOfCourse());
 //        assertEquals(coursePage.courseText.getText(),"New Courses Name (1212)");
 //        assertEquals(coursePage.categoryText.getText(),"Samples");
 //        assertEquals(coursePage.assignedLearnersText.getText(),"1");

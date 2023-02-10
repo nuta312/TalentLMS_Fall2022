@@ -32,7 +32,7 @@ public class UserPage extends BasePage {
     public WebElement addUserBtn;
 
 
-    public UserPage clickAddUserBtn(){
+    public UserPage clickAddUserBtn() {
         elementActions.click(addUserBtn);
         return this;
     }
