@@ -29,6 +29,11 @@ public class WebElementActions {
         return this;
     }
 
+    public WebElementActions getElements (WebElement element){
+        getElements(element);
+        return this;
+    }
+
     public WebElementActions sendKeys(WebElement element,String txt){
         waitElementToBeDisplayed(element);
         element.sendKeys(txt);

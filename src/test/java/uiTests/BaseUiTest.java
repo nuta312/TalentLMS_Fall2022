@@ -4,6 +4,7 @@ import com.talentLMS.UI.dataProviders.ConfigReader;
 import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
 import com.talentLMS.UI.page.LoginPage;
+import com.talentLMS.UI.page.accountAndSettings.UsersAccSetPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,6 +15,9 @@ public abstract class BaseUiTest {
     public WebElementActions webElementActions;
     public WebDriver driver;
 
+
+    public UsersAccSetPage usersAccSetPage;
+
     @BeforeClass
     public void setUpUiTest() {
         loginPage = new LoginPage();
@@ -21,6 +25,8 @@ public abstract class BaseUiTest {
         driver = Driver.getDriver();
         driver.navigate().to(ConfigReader.getProperty("qa_env"));
         loginPage.fillUpUsernameAndPassword();
+        usersAccSetPage = new UsersAccSetPage();
+
     }
 
     @AfterClass
