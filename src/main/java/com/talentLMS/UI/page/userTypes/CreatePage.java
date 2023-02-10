@@ -3,10 +3,11 @@ import com.talentLMS.UI.page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
+
+/**
+ *@authorAidai K
+ */
 public class CreatePage extends BasePage {
-    /**
-     * @author Aidai K
-     */
     @FindBy(xpath = "//a[contains(.,'Add user type')]")
     public WebElement addUserTypeLinkBtn;
 
@@ -42,27 +43,20 @@ public class CreatePage extends BasePage {
     @FindBy(xpath = "//table[@id='tl-list-user-types']//tbody")
     public List<WebElement> userTypesList;
 
-    @FindBy(xpath = "//*[@class='dataTables_info']//a[2]")
-    public WebElement arrowBtnOfTypeUserList;
-
     @FindBy(xpath = "//ul[@class='dynatree-container']//ul/li[8]//span/span[2]")
     public WebElement userTypeArrowCheckBtn;
 
-    public CreatePage clickAddUserTypeLinkBtn(){
-        elementActions.click(addUserTypeLinkBtn);
-        return this;
-    }
-
     public CreatePage createAdministrator(){
+        elementActions.click(addUserTypeLinkBtn);
         elementActions.sendKeys(nameTypesOfUsers, mock.generateMockFirstname());
         elementActions.click(arrowBtn).click(roleAdministrator);
         elementActions.click(checkBoxAdministrator).click(checkBoxInstructor).click(checkBoxLearner).click(checkBoxGeneral);
         elementActions.click(saveBtn);
-        elementActions.click(arrowBtnOfTypeUserList);
         return this;
     }
 
     public CreatePage createInstructor(){
+        elementActions.click(addUserTypeLinkBtn);
         elementActions.sendKeys(nameTypesOfUsers, mock.generateMockFirstname());
         elementActions.click(arrowBtn).click(roleInstructor);
         elementActions.click(checkBoxInstructor).click(checkBoxLearner).click(checkBoxGeneral);
@@ -71,6 +65,7 @@ public class CreatePage extends BasePage {
     }
 
     public CreatePage createLearner(){
+        elementActions.click(addUserTypeLinkBtn);
         elementActions.sendKeys(nameTypesOfUsers, mock.generateMockFirstname());
         elementActions.click(arrowBtn).click(roleLearner);
         elementActions.click(checkBoxLearner).click(checkBoxGeneral);
@@ -79,27 +74,11 @@ public class CreatePage extends BasePage {
     }
 
     /**
-     * when i get users list in user types page, if there have a lot of users I won't be able to access non-visible items
-     * cause of i wrote this method.
+     * method for negative test
      */
-//    public CreatePage clickUserTypesListArrowBtn(){
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].click();", arrowBtnOfTypeUserList);
-//        return this;
-//    }
-
-    /**
-     * methods for negative test
-     */
-    public CreatePage createNegativeUserTypesName(String name){
-        elementActions.sendKeys(nameTypesOfUsers, name);
-        elementActions.click(arrowBtn).click(roleLearner);
-        elementActions.click(checkBoxInstructor).click(checkBoxLearner).click(checkBoxGeneral);
-        elementActions.click(saveBtn);
-        return this;
-    }
 
     public CreatePage combinationsInvalidCheckBox(){
+        elementActions.click(addUserTypeLinkBtn);
         elementActions.sendKeys(nameTypesOfUsers, mock.generateMockFirstname());
         elementActions.click(arrowBtn).click(roleLearner);
         elementActions.click(checkBoxLearner).click(checkBoxGeneral);
@@ -109,3 +88,4 @@ public class CreatePage extends BasePage {
         return this;
     }
 }
+
