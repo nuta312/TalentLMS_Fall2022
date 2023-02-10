@@ -42,6 +42,13 @@ public class WebElementActions {
         element.sendKeys(txt);
         return this;
     }
+    public WebElementActions sendKeysWithClearForMac(WebElement element,String txt) {
+        waitElementToBeDisplayed(element);
+        element.sendKeys(Keys.COMMAND + "a");
+        element.sendKeys(Keys.DELETE);
+        element.sendKeys(txt);
+        return this;
+    }
 
     public WebElementActions pause(Integer milliSeconds){
         try {
