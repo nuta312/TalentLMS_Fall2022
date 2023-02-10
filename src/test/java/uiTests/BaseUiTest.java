@@ -20,8 +20,6 @@ public abstract class BaseUiTest {
     public WebElementActions webElementActions;
     public WebDriver driver;
     public UserPage userPage;
-
-    public AdminHomePage adminHomePage;
     public AddUserPage addUserPage;
     public Homepage homepage;
 
