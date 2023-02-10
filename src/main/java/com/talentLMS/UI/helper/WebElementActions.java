@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+import static org.testng.Assert.*;
+
 public class WebElementActions {
 
     WebDriver driver;
@@ -60,6 +62,16 @@ public class WebElementActions {
         }catch (InterruptedException e){
             e.printStackTrace();
         }
+        return this;
+    }
+
+    public WebElementActions assertUrlPage(String object){
+        assertEquals(Driver.getDriver().getCurrentUrl(),object);
+        return this;
+    }
+
+    public WebElementActions moveTo(String URL){
+        Driver.getDriver().navigate().to(URL);
         return this;
     }
 
