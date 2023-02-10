@@ -26,13 +26,13 @@ public class UserPage extends BasePage {
     public WebElement columnLastLogin;
 
     @FindBy(xpath = "//th[@class='tl-align-center tl-table-operations-cell sorting_disabled']")
-    public WebElement columnOption;
+    public WebElement columnOptions;
 
-    @FindBy(xpath = "//a[text()='Add user']")
+    @FindBy(xpath = "(//a[contains(text(),'Add user')])[1]")
     public WebElement addUserBtn;
 
 
-    public UserPage clickAddUserBtn(){
+    public UserPage clickAddUserBtn() {
         elementActions.click(addUserBtn);
         return this;
     }
