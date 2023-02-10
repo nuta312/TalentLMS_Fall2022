@@ -5,6 +5,8 @@ import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
 import com.talentLMS.UI.page.coursesPage.CoursePage;
 import com.talentLMS.UI.page.groupsPage.AddGroupsPage;
+import com.talentLMS.UI.page.reports.ReportsCoursePage;
+import com.talentLMS.UI.page.reports.ReportsPage;
 import com.talentLMS.UI.page.сategory.CategoryPage;
 import com.talentLMS.UI.page.LoginPage;
 import com.talentLMS.UI.page.userTypes.CreatePage;
@@ -27,11 +29,11 @@ public abstract class BaseUiTest {
     public WebDriver driver;
     public CreatePage createPage;
     public UserPage userPage;
-
     public AddUserPage addUserPage;
     public Homepage homepage;
-
     public ViewCoursesCatalog viewCoursesCatalog;
+    public ReportsPage reportsPage;
+    public ReportsCoursePage reportsCoursePage;
 
 
     public AddGroupsPage addGroupsPage;
@@ -55,6 +57,8 @@ public abstract class BaseUiTest {
         viewCoursesCatalog = new ViewCoursesCatalog();
         homepage = new Homepage();
         addGroupsPage = new AddGroupsPage();
+        reportsPage = new ReportsPage();
+        reportsCoursePage = new ReportsCoursePage();
     }
 
     @AfterClass
