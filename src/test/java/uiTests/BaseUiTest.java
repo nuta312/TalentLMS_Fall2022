@@ -6,6 +6,7 @@ import com.talentLMS.UI.helper.WebElementActions;
 import com.talentLMS.UI.page.coursesPage.CoursePage;
 import com.talentLMS.UI.page.сategory.CategoryPage;
 import com.talentLMS.UI.page.LoginPage;
+import com.talentLMS.UI.page.userTypes.CreatePage;
 import com.talentLMS.UI.page.coursesPage.ViewCoursesCatalog;
 import com.talentLMS.UI.page.accountAndSettings.Homepage;
 import com.talentLMS.UI.page.AdminHomePage;
@@ -23,6 +24,7 @@ public abstract class BaseUiTest {
     public CategoryPage categoryPage;
     public WebElementActions webElementActions;
     public WebDriver driver;
+    public CreatePage createPage;
     public UserPage userPage;
 
     public AddUserPage addUserPage;
@@ -42,6 +44,7 @@ public abstract class BaseUiTest {
         driver = Driver.getDriver();
         driver.navigate().to(ConfigReader.getProperty("qa_env"));
         loginPage.fillUpUsernameAndPassword();
+        createPage = new CreatePage();
         userPage = new UserPage();
         adminHomePage = new AdminHomePage();
         addUserPage = new AddUserPage();
