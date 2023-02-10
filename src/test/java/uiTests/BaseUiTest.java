@@ -35,8 +35,9 @@ public abstract class BaseUiTest {
     public ReportsPage reportsPage;
     public ReportsCoursePage reportsCoursePage;
 
-
     public AddGroupsPage addGroupsPage;
+
+
 
 
 
@@ -59,6 +60,7 @@ public abstract class BaseUiTest {
         addGroupsPage = new AddGroupsPage();
         reportsPage = new ReportsPage();
         reportsCoursePage = new ReportsCoursePage();
+
     }
 
     @AfterClass
