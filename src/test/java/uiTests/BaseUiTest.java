@@ -6,6 +6,7 @@ import com.talentLMS.UI.helper.WebElementActions;
 import com.talentLMS.UI.page.coursesPage.CoursePage;
 import com.talentLMS.UI.page.сategory.CategoryPage;
 import com.talentLMS.UI.page.LoginPage;
+import com.talentLMS.UI.page.coursesPage.ViewCoursesCatalog;
 import com.talentLMS.UI.page.accountAndSettings.Homepage;
 import com.talentLMS.UI.page.AdminHomePage;
 import com.talentLMS.UI.page.users.AddUserPage;
@@ -27,6 +28,8 @@ public abstract class BaseUiTest {
     public AddUserPage addUserPage;
     public Homepage homepage;
 
+    public ViewCoursesCatalog viewCoursesCatalog;
+
 
 
     @BeforeClass
@@ -42,6 +45,7 @@ public abstract class BaseUiTest {
         userPage = new UserPage();
         adminHomePage = new AdminHomePage();
         addUserPage = new AddUserPage();
+        viewCoursesCatalog = new ViewCoursesCatalog();
         homepage = new Homepage();
     }
 
