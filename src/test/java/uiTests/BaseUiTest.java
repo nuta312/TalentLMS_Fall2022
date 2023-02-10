@@ -4,6 +4,7 @@ import com.talentLMS.UI.dataProviders.ConfigReader;
 import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
 import com.talentLMS.UI.page.coursesPage.CoursePage;
+import com.talentLMS.UI.page.groupsPage.AddGroupsPage;
 import com.talentLMS.UI.page.reports.ReportsCoursePage;
 import com.talentLMS.UI.page.reports.ReportsPage;
 import com.talentLMS.UI.page.сategory.CategoryPage;
@@ -35,6 +36,9 @@ public abstract class BaseUiTest {
     public ReportsCoursePage reportsCoursePage;
 
 
+    public AddGroupsPage addGroupsPage;
+
+
 
     @BeforeClass
     public void setUpUiTest() {
@@ -52,6 +56,7 @@ public abstract class BaseUiTest {
         addUserPage = new AddUserPage();
         viewCoursesCatalog = new ViewCoursesCatalog();
         homepage = new Homepage();
+        addGroupsPage = new AddGroupsPage();
         reportsPage = new ReportsPage();
         reportsCoursePage = new ReportsCoursePage();
     }
