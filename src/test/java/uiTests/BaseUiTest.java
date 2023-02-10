@@ -3,6 +3,7 @@ package uiTests;
 import com.talentLMS.UI.dataProviders.ConfigReader;
 import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
+import com.talentLMS.UI.page.ReportsPage.ReportPage;
 import com.talentLMS.UI.page.coursesPage.CoursePage;
 import com.talentLMS.UI.page.сategory.CategoryPage;
 import com.talentLMS.UI.page.LoginPage;
@@ -27,6 +28,8 @@ public abstract class BaseUiTest {
     public AddUserPage addUserPage;
     public Homepage homepage;
 
+    public ReportPage reportPage;
+
 
 
     @BeforeClass
@@ -43,6 +46,7 @@ public abstract class BaseUiTest {
         adminHomePage = new AdminHomePage();
         addUserPage = new AddUserPage();
         homepage = new Homepage();
+        reportPage = new ReportPage();
     }
 
     @AfterClass
