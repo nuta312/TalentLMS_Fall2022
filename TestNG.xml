@@ -5,7 +5,7 @@
     </listeners>
     <test name="Regression Test">
         <classes>
-            <class name="uiTests.category.OpenCategory" />
+            <class name="OpenCategory" />
         </classes>
     </test>
 </suite>
