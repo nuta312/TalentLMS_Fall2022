@@ -74,8 +74,8 @@ public abstract class BaseUiTest {
 
     }
 
-    @AfterClass
-    public void tearDown() {
-        Driver.closeDriver();
-    }
+//    @AfterClass
+//    public void tearDown() {
+//        Driver.closeDriver();
+//    }
 }

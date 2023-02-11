@@ -1,7 +1,10 @@
-package uiTests.coursesTest;
+package uiTests.coursesPage.coursesTest;
 
 import static org.testng.Assert.*;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.Test;
 import uiTests.BaseUiTest;
 
@@ -84,5 +87,14 @@ public class MainCourse extends BaseUiTest {
     public void addCourse() {
         webElementActions.click(coursePage.addCourseBtn);
         coursePage.createAddCourse();
+    }
+
+    @FindBy(xpath = "//i[@class='icon-vcard tl-icon-stack-content']")
+    private WebElement testIconEinar;
+
+    @Test
+    public void addType() {
+        WebElement exmpl = driver.findElement(By.xpath("//i[@class='icon-vcard tl-icon-stack-content']"));
+        webElementActions.click(exmpl);
     }
 }
