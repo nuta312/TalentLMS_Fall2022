@@ -5,11 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+
 /**
  * @author Farrukh Ashirbaev
  */
 public class CategoryPage extends BasePage {
-
     String categoryURL = "https://nuta1bema.talentlms.com/category/index";
 
     @FindBy(xpath = "//div[@class='tl-title tl-ellipsis']")
@@ -42,12 +42,12 @@ public class CategoryPage extends BasePage {
     @FindBy(xpath = "//i[@alt='Delete']")
     private List<WebElement> removeColumnCategoryInList;
 
-    public CategoryPage checkURLCategoryPage(){
+    public CategoryPage checkURLCategoryPage() {
         elementActions.assertUrlPage(categoryURL);
         return this;
     }
 
-    public CategoryPage backToCategoryPage(){
+    public CategoryPage backToCategoryPage() {
         elementActions.moveTo(categoryURL);
         return this;
     }

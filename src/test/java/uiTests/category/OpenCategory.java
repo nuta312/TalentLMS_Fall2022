@@ -37,7 +37,7 @@ public class OpenCategory extends BaseUiTest {
     }
 
     @Test (priority = 4)
-    @Description("Open Category From Home Page Using Icon Button")
+    @Description("Open Category From Home Page Using Category URL, User should be AnAuthorized")
     @Feature("Category")
     public void openCategoryWithUsingURLIfUserUnauthorized() {
         adminHomePage.clickLogoutBtn();
