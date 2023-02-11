@@ -30,6 +30,8 @@ public class AdminHomePage extends BasePage {
 
     @FindBy(xpath = "//a[contains(text(),'Add category')]")
     private WebElement addCategoryBtn;
+    @FindBy(xpath = "//a[contains(text(),'Reports')]")
+    public WebElement reports;
 
     public AdminHomePage clickCategoriesTxtLink() {
         elementActions.click(categoriesTxtBtn);
@@ -66,6 +68,18 @@ public class AdminHomePage extends BasePage {
     public AdminHomePage clickAdminAddUserBtn() {
         elementActions.click(adminAddUserBtn);
         return this;
+    }
+    public AdminHomePage clickReportsBtn(){
+        elementActions.click(reports);
+        return this;
+    }
+    @FindBy (xpath = "//div[@class='tl-bold-link']//a[contains(text(),'Groups')]")
+    public WebElement groupsBtn;
+
+    public AdminHomePage clickGroupsBtn(){
+        elementActions.click(groupsBtn);
+        return this;
+
     }
 
 }
