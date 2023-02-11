@@ -11,6 +11,7 @@ import com.talentLMS.UI.page.reports.ReportsCoursePage;
 import com.talentLMS.UI.page.reports.ReportsPage;
 import com.talentLMS.UI.page.сategory.CategoryPage;
 import com.talentLMS.UI.page.LoginPage;
+import com.talentLMS.UI.page.coursesPage.CoursesBuyCourseFunc;
 import com.talentLMS.UI.page.userTypes.CreatePage;
 import com.talentLMS.UI.page.coursesPage.ViewCoursesCatalog;
 import com.talentLMS.UI.page.accountAndSettings.Homepage;
@@ -28,6 +29,7 @@ public abstract class BaseUiTest {
     public CategoryPage categoryPage;
     public WebElementActions webElementActions;
     public WebDriver driver;
+    public CoursesBuyCourseFunc coursesBuyCourseFunc;
     public CreatePage createPage;
     public UserPage userPage;
     public AddUserPage addUserPage;
@@ -55,6 +57,9 @@ public abstract class BaseUiTest {
         driver = Driver.getDriver();
         driver.navigate().to(ConfigReader.getProperty("qa_env"));
         loginPage.fillUpUsernameAndPassword();
+
+        coursesBuyCourseFunc = new CoursesBuyCourseFunc();
+
         createPage = new CreatePage();
         userPage = new UserPage();
         adminHomePage = new AdminHomePage();
@@ -66,7 +71,6 @@ public abstract class BaseUiTest {
         reportsCoursePage = new ReportsCoursePage();
         gamificationPage = new GamificationPage();
         groupPageFunctionality = new GroupPageFunctionality();
-
 
     }
 
