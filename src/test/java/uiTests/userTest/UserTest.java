@@ -44,7 +44,4 @@ public class UserTest extends BaseUiTest {
         assertEquals(userPage.columnLastLogin.getText(),"LAST LOGIN");
         assertEquals(userPage.columnOptions.getText(),"OPTIONS");
     }
-
-
-
 }
