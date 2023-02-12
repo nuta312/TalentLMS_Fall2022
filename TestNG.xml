@@ -5,7 +5,6 @@
     </listeners>
     <test name="Regression Test">
         <classes>
-            <class name="OpenCategory" />
             <class name="uiTests.category.OpenCategory" />
             <class name="uiTests.login.LoginTests" />
             <class name="uiTests.userTest.UserTest" />

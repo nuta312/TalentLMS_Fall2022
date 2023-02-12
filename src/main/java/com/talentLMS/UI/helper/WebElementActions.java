@@ -49,7 +49,7 @@ public class WebElementActions {
         return this;
     }
 
-    public WebElementActions moveTo(WebElement element){
+    public WebElementActions moveToUrlPage(WebElement element){
         Actions actions = new Actions(driver);
         actions.click(element).moveToElement(element).click().perform();
         return this;
@@ -69,7 +69,7 @@ public class WebElementActions {
         return this;
     }
 
-    public WebElementActions moveTo(String URL){
+    public WebElementActions moveToUrlPage(String URL){
         Driver.getDriver().navigate().to(URL);
         return this;
     }

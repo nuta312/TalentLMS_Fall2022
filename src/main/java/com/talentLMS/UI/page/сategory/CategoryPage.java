@@ -48,7 +48,7 @@ public class CategoryPage extends BasePage {
     }
 
     public CategoryPage backToCategoryPage() {
-        elementActions.moveTo(categoryURL);
+        elementActions.moveToUrlPage(categoryURL);
         return this;
     }
 
