@@ -18,6 +18,7 @@ import com.talentLMS.UI.page.accountAndSettings.Homepage;
 import com.talentLMS.UI.page.AdminHomePage;
 import com.talentLMS.UI.page.users.AddUserPage;
 import com.talentLMS.UI.page.users.UserPage;
+import com.talentLMS.UI.page.сategory.CreateCategoryPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -27,6 +28,7 @@ public abstract class BaseUiTest {
     public CoursePage coursePage;
     public AdminHomePage adminHomePage;
     public CategoryPage categoryPage;
+    public CreateCategoryPage createCategoryPage;
     public WebElementActions webElementActions;
     public WebDriver driver;
     public CoursesBuyCourseFunc coursesBuyCourseFunc;
@@ -43,23 +45,18 @@ public abstract class BaseUiTest {
     public GroupPageFunctionality groupPageFunctionality;
 
 
-
-
-
-
     @BeforeClass
     public void setUpUiTest() {
         loginPage = new LoginPage();
         coursePage = new CoursePage();
         webElementActions = new WebElementActions();
         adminHomePage = new AdminHomePage();
-        categoryPage = new CategoryPage();
         driver = Driver.getDriver();
         driver.navigate().to(ConfigReader.getProperty("qa_env"));
         loginPage.fillUpUsernameAndPassword();
-
+        categoryPage = new CategoryPage();
+        createCategoryPage = new CreateCategoryPage();
         coursesBuyCourseFunc = new CoursesBuyCourseFunc();
-
         createPage = new CreatePage();
         userPage = new UserPage();
         adminHomePage = new AdminHomePage();
