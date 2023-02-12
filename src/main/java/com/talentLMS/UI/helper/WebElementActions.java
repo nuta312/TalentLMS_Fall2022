@@ -15,8 +15,6 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.*;
 
 public class WebElementActions {
-
-    WebDriver driver;
     Actions actions = new Actions(Driver.getDriver());
 
     public WebElementActions waitElementToBeClickAble(WebElement element){
