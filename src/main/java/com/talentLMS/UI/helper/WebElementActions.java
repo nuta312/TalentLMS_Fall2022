@@ -17,7 +17,6 @@ public class WebElementActions {
 
     WebDriver driver;
 
-
     public WebElementActions waitElementToBeClickAble(WebElement element){
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15))
                 .until(ExpectedConditions.elementToBeClickable(element));
@@ -74,5 +73,4 @@ public class WebElementActions {
         Driver.getDriver().navigate().to(URL);
         return this;
     }
-
 }
