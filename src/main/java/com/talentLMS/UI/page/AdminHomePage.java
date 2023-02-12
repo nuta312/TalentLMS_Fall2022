@@ -49,7 +49,7 @@ public class AdminHomePage extends BasePage {
     }
 
     public AdminHomePage backToAdminPage() {
-        elementActions.moveTo(adminHomePageURL);
+        elementActions.moveToUrlPage(adminHomePageURL);
         return this;
     }
 
