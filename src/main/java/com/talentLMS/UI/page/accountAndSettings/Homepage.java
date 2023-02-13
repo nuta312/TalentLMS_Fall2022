@@ -37,9 +37,6 @@ public class Homepage extends BasePage {
     @FindBy(xpath = ".//button[@title='Play']")
     public WebElement playVideoButton;
 
-    @FindBy(xpath = ".//span[@class='mejs__currenttime']")
-    public WebElement timeOfWatchedPieceOfVideo;
-
     @FindBy(xpath = ".//button[@title='Pause']")
     public WebElement pauseVideoButton;
 
