@@ -18,6 +18,7 @@ public class ChromeWebDriver {
         options.addArguments("--disable-extensions");
         options.addArguments("--start-maximized");
         options.addArguments("--window-size=1920,1080");
+        options.addArguments("--no-sandbox");
 
 
 

@@ -2,14 +2,23 @@ package com.talentLMS.UI.helper;
 
 import com.talentLMS.UI.driverFactory.Driver;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static org.testng.Assert.*;
+
 public class WebElementActions {
+
+    Actions actions = new Actions(Driver.getDriver());
+
+    WebDriver driver;
 
     public WebElementActions waitElementToBeClickAble(WebElement element){
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15))
@@ -43,6 +52,11 @@ public class WebElementActions {
         return this;
     }
 
+    public WebElementActions moveTo(WebElement element){
+        actions.click(element).moveToElement(element).click().perform();
+        return this;
+    }
+
     public WebElementActions pause(Integer milliSeconds){
         try {
             TimeUnit.MILLISECONDS.sleep(milliSeconds);
@@ -52,4 +66,19 @@ public class WebElementActions {
         return this;
     }
 
+    public WebElementActions assertUrlPage(String object){
+        assertEquals(Driver.getDriver().getCurrentUrl(),object);
+        return this;
+    }
+
+    public WebElementActions moveToUrlPage(String URL){
+        Driver.getDriver().navigate().to(URL);
+        return this;
+    }
+    
+    public WebElementActions moveToMouseAction(WebElement element){
+        actions.moveToElement(element).perform();
+        return this;
+    }
+    
 }
