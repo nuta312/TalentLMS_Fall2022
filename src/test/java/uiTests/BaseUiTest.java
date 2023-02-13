@@ -33,10 +33,8 @@ public abstract class BaseUiTest {
     public CreateCategoryPage createCategoryPage;
     public WebElementActions webElementActions;
     public WebDriver driver;
-
     public Actions actions;
     public CoursesBuyCourseFunc coursesBuyCourseFunc;
-
     public CreatePage createPage;
     public UserPage userPage;
     public AddUserPage addUserPage;
@@ -48,7 +46,6 @@ public abstract class BaseUiTest {
     public AddGroupsPage addGroupsPage;
     public GamificationPage gamificationPage;
     public GroupPageFunctionality groupPageFunctionality;
-
 
     @BeforeClass
     public void setUpUiTest() {
@@ -75,7 +72,6 @@ public abstract class BaseUiTest {
         userReportsPage = new UserReportsPage();
         gamificationPage = new GamificationPage();
         groupPageFunctionality = new GroupPageFunctionality();
-
     }
 
     @AfterClass
