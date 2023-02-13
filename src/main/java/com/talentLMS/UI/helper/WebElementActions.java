@@ -80,5 +80,9 @@ public class WebElementActions {
         actions.moveToElement(element).perform();
         return this;
     }
-    
+    Actions action= new Actions(Driver.getDriver());
+    public WebElementActions moveToElement (WebElement element){
+        action.moveToElement(element).perform();
+        return this;
+    }
 }
