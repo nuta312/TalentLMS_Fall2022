@@ -33,6 +33,9 @@ public class AdminHomePage extends BasePage {
     @FindBy(xpath = "//a[contains(text(),'Reports')]")
     public WebElement reports;
 
+    @FindBy(xpath = "//a[@class='brand']")
+    public WebElement logoLinkToHomePage;
+
     public AdminHomePage clickCategoriesTxtLink() {
         elementActions.click(categoriesTxtBtn);
         return this;
@@ -49,7 +52,7 @@ public class AdminHomePage extends BasePage {
     }
 
     public AdminHomePage backToAdminPage() {
-        elementActions.moveTo(adminHomePageURL);
+        elementActions.moveToUrlPage(adminHomePageURL);
         return this;
     }
 

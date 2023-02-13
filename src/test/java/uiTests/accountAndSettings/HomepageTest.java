@@ -1,19 +1,15 @@
 package uiTests.accountAndSettings;
 
-import com.talentLMS.UI.dataProviders.ConfigReader;
-import com.talentLMS.UI.driverFactory.Driver;
 import jdk.jfr.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import uiTests.BaseUiTest;
 
 import java.time.Duration;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
 
 /**
  * @author Kurmanjan Temirova
@@ -29,26 +25,26 @@ public class HomepageTest extends BaseUiTest {
     @Description("Verify that user can maximize video window")
     public void maximizeVideoWindowTest(){
         webElementActions.click(homepage.maximizeAndMinimizeVideoWindowButton);
-        assertTrue(homepage.isWindowMaximized(driver, homepage.videoWindow));
+        assertTrue(homepage.isWindowMaximized(homepage.videoWindow));
     }
     @Test(priority = 3)
-    @Description("Verify that user can minimize video window")
-    public void minimizeVideoWindowTest(){
-        webElementActions.click(homepage.maximizeAndMinimizeVideoWindowButton);
-        assertTrue(homepage.isWindowMinimized(driver, homepage.videoWindow));
-    }
-    @Test(priority = 4)
     @Description("Verify that user can play video")
     public void playVideoTest(){
         webElementActions.click(homepage.playVideoButton);
         assertTrue(homepage.pauseVideoButton.isEnabled());
     }
-    @Test(priority = 5)
+    @Test(priority = 4, dependsOnMethods = "playVideoTest")
     @Description("Verify that user watch video to the end")
     public void watchVideoToTheEndTest(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(76));
-        wait.until(ExpectedConditions.textToBe(By.xpath("//span[@class='mejs__currenttime']"), "01:12"));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(80));
+        wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath(".//span[@class='mejs__currenttime']"), "01:12"));
         assertEquals(homepage.timeOfWatchedPieceOfVideo.getText(), "01:12");
+    }
+    @Test(priority = 5)
+    @Description("Verify that user can minimize video window")
+    public void minimizeVideoWindowTest(){
+        webElementActions.click(homepage.maximizeAndMinimizeVideoWindowButton);
+        assertTrue(homepage.isWindowMinimized(homepage.videoWindow));
     }
     @Test(priority = 6)
     @Description("Verify that user can click on Upgrade button")
