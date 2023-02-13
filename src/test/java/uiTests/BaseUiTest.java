@@ -10,22 +10,30 @@ import com.talentLMS.UI.page.groupsPage.GroupPageFunctionality;
 import com.talentLMS.UI.page.reports.ReportsCoursePage;
 import com.talentLMS.UI.page.reports.ReportsPage;
 import com.talentLMS.UI.page.reports.UserReportsPage;
+import com.talentLMS.UI.page.userTypes.UserTypes;
 import com.talentLMS.UI.page.сategory.CategoryPage;
 import com.talentLMS.UI.page.LoginPage;
-import com.talentLMS.UI.page.accountAndSettings.UsersAccSetPage;
+import com.talentLMS.UI.page.coursesPage.CoursesBuyCourseFunc;
+import com.talentLMS.UI.page.userTypes.CreatePage;
+import com.talentLMS.UI.page.coursesPage.ViewCoursesCatalog;
+import com.talentLMS.UI.page.accountAndSettings.Homepage;
+import com.talentLMS.UI.page.AdminHomePage;
+import com.talentLMS.UI.page.users.AddUserPage;
+import com.talentLMS.UI.page.users.UserPage;
+import com.talentLMS.UI.page.сategory.CreateCategoryPage;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+import com.talentLMS.UI.page.accountAndSettings.UsersAccSetPage;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+
 
 public abstract class BaseUiTest {
 
     public LoginPage loginPage;
     public WebElementActions webElementActions;
     public WebDriver driver;
-
-
     public UsersAccSetPage usersAccSetPage;
-
     public Actions actions;
     public CoursesBuyCourseFunc coursesBuyCourseFunc;
     public CreatePage createPage;
@@ -39,6 +47,12 @@ public abstract class BaseUiTest {
     public AddGroupsPage addGroupsPage;
     public GamificationPage gamificationPage;
     public GroupPageFunctionality groupPageFunctionality;
+    public CoursePage coursePage;
+    public AdminHomePage adminHomePage;
+    public CategoryPage categoryPage;
+    public CreateCategoryPage createCategoryPage;
+    public UserTypes userTypes;
+
 
     @BeforeClass
     public void setUpUiTest() {
@@ -47,8 +61,8 @@ public abstract class BaseUiTest {
         driver = Driver.getDriver();
         driver.navigate().to(ConfigReader.getProperty("qa_env"));
         loginPage.fillUpUsernameAndPassword();
-        usersAccSetPage = new UsersAccSetPage();
 
+        usersAccSetPage = new UsersAccSetPage();
         categoryPage = new CategoryPage();
         createCategoryPage = new CreateCategoryPage();
         coursesBuyCourseFunc = new CoursesBuyCourseFunc();
@@ -64,6 +78,7 @@ public abstract class BaseUiTest {
         userReportsPage = new UserReportsPage();
         gamificationPage = new GamificationPage();
         groupPageFunctionality = new GroupPageFunctionality();
+        userTypes = new UserTypes();
     }
 
     @AfterClass
