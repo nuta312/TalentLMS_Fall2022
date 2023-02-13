@@ -6,7 +6,7 @@
     <test name="Regression Test">
         <classes>
             <class name="uiTests.login.LoginTests" />
-            <class name="uiTests.category.OpenCategory" />
+            <class name="uiTests.category.OpenCategoryPage" />
             <class name="uiTests.category.ActionsWithCategory" />
             <class name="uiTests.userTest.UserTest" />
             <class name="uiTests.accountAndSettings.HomepageTest" />
