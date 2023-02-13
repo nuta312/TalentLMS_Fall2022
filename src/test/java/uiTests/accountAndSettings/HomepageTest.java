@@ -32,7 +32,6 @@ public class HomepageTest extends BaseUiTest {
     @Test(priority = 4)
     @Description("Verify that user can minimize video window")
     public void minimizeVideoWindowTest(){
-        Actions actions = new Actions(driver);
         actions.moveToElement(homepage.videoWindow).moveToElement(homepage.maximizeAndMinimizeVideoWindowButton).click().build().perform();
         assertTrue(homepage.isWindowMinimized(homepage.videoWindow));
     }
