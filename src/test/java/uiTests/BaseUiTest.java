@@ -9,6 +9,7 @@ import com.talentLMS.UI.page.groupsPage.AddGroupsPage;
 import com.talentLMS.UI.page.groupsPage.GroupPageFunctionality;
 import com.talentLMS.UI.page.reports.ReportsCoursePage;
 import com.talentLMS.UI.page.reports.ReportsPage;
+import com.talentLMS.UI.page.reports.UserReportsPage;
 import com.talentLMS.UI.page.сategory.CategoryPage;
 import com.talentLMS.UI.page.LoginPage;
 import com.talentLMS.UI.page.coursesPage.CoursesBuyCourseFunc;
@@ -43,7 +44,7 @@ public abstract class BaseUiTest {
     public ViewCoursesCatalog viewCoursesCatalog;
     public ReportsPage reportsPage;
     public ReportsCoursePage reportsCoursePage;
-
+    public UserReportsPage userReportsPage;
     public AddGroupsPage addGroupsPage;
     public GamificationPage gamificationPage;
     public GroupPageFunctionality groupPageFunctionality;
@@ -71,6 +72,7 @@ public abstract class BaseUiTest {
         addGroupsPage = new AddGroupsPage();
         reportsPage = new ReportsPage();
         reportsCoursePage = new ReportsCoursePage();
+        userReportsPage = new UserReportsPage();
         gamificationPage = new GamificationPage();
         groupPageFunctionality = new GroupPageFunctionality();
 
