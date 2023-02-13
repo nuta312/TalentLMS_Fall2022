@@ -5,11 +5,14 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 /**
- *@authorAidai K
+ *@authorAidaiK
  */
 public class CreatePage extends BasePage {
     @FindBy(xpath = "//a[contains(.,'Add user type')]")
     public WebElement addUserTypeLinkBtn;
+
+    @FindBy(xpath = "//a[contains(.,'Add user type')]")
+    public WebElement addUserTypeLinkBlueBtn;
 
     @FindBy(xpath = "//input[@id='user_type_name']")
     public WebElement nameTypesOfUsers;
@@ -46,7 +49,12 @@ public class CreatePage extends BasePage {
     @FindBy(xpath = "//ul[@class='dynatree-container']//ul/li[8]//span/span[2]")
     public WebElement userTypeArrowCheckBtn;
 
-    public CreatePage createAdministrator(){
+    public CreatePage clickAddUserBlueBtn() {
+        elementActions.click(addUserTypeLinkBlueBtn);
+        return this;
+    }
+
+    public CreatePage createAdministrator() {
         elementActions.click(addUserTypeLinkBtn);
         elementActions.sendKeys(nameTypesOfUsers, mock.generateMockFirstname());
         elementActions.click(arrowBtn).click(roleAdministrator);
@@ -55,8 +63,7 @@ public class CreatePage extends BasePage {
         return this;
     }
 
-    public CreatePage createInstructor(){
-        elementActions.click(addUserTypeLinkBtn);
+    public CreatePage createInstructor() {
         elementActions.sendKeys(nameTypesOfUsers, mock.generateMockFirstname());
         elementActions.click(arrowBtn).click(roleInstructor);
         elementActions.click(checkBoxInstructor).click(checkBoxLearner).click(checkBoxGeneral);
@@ -64,8 +71,7 @@ public class CreatePage extends BasePage {
         return this;
     }
 
-    public CreatePage createLearner(){
-        elementActions.click(addUserTypeLinkBtn);
+    public CreatePage createLearner() {
         elementActions.sendKeys(nameTypesOfUsers, mock.generateMockFirstname());
         elementActions.click(arrowBtn).click(roleLearner);
         elementActions.click(checkBoxLearner).click(checkBoxGeneral);
@@ -77,8 +83,7 @@ public class CreatePage extends BasePage {
      * method for negative test
      */
 
-    public CreatePage combinationsInvalidCheckBox(){
-        elementActions.click(addUserTypeLinkBtn);
+    public CreatePage combinationsInvalidCheckBox() {
         elementActions.sendKeys(nameTypesOfUsers, mock.generateMockFirstname());
         elementActions.click(arrowBtn).click(roleLearner);
         elementActions.click(checkBoxLearner).click(checkBoxGeneral);
@@ -88,4 +93,3 @@ public class CreatePage extends BasePage {
         return this;
     }
 }
-

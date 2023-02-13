@@ -46,7 +46,7 @@ public class AdminHomePage extends BasePage {
         return this;
     }
 
-    public AdminHomePage clickLogoutBtn(){
+    public AdminHomePage clickLogoutBtn() {
         elementActions.click(logOutBtn);
         return this;
     }
@@ -70,14 +70,16 @@ public class AdminHomePage extends BasePage {
         elementActions.click(adminAddUserBtn);
         return this;
     }
-    public AdminHomePage clickReportsBtn(){
+
+    public AdminHomePage clickReportsBtn() {
         elementActions.click(reports);
         return this;
     }
-    @FindBy (xpath = "//div[@class='tl-bold-link']//a[contains(text(),'Groups')]")
+
+    @FindBy(xpath = "//div[@class='tl-bold-link']//a[contains(text(),'Groups')]")
     public WebElement groupsBtn;
 
-    public AdminHomePage clickGroupsBtn(){
+    public AdminHomePage clickGroupsBtn() {
         elementActions.click(groupsBtn);
         return this;
 

@@ -9,6 +9,7 @@ import com.talentLMS.UI.page.groupsPage.AddGroupsPage;
 import com.talentLMS.UI.page.groupsPage.GroupPageFunctionality;
 import com.talentLMS.UI.page.reports.ReportsCoursePage;
 import com.talentLMS.UI.page.reports.ReportsPage;
+import com.talentLMS.UI.page.reports.UserReportsPage;
 import com.talentLMS.UI.page.userTypes.UserTypes;
 import com.talentLMS.UI.page.сategory.CategoryPage;
 import com.talentLMS.UI.page.LoginPage;
@@ -21,6 +22,7 @@ import com.talentLMS.UI.page.users.AddUserPage;
 import com.talentLMS.UI.page.users.UserPage;
 import com.talentLMS.UI.page.сategory.CreateCategoryPage;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -32,6 +34,7 @@ public abstract class BaseUiTest {
     public CreateCategoryPage createCategoryPage;
     public WebElementActions webElementActions;
     public WebDriver driver;
+    public Actions actions;
     public CoursesBuyCourseFunc coursesBuyCourseFunc;
     public CreatePage createPage;
     public UserPage userPage;
@@ -40,11 +43,11 @@ public abstract class BaseUiTest {
     public ViewCoursesCatalog viewCoursesCatalog;
     public ReportsPage reportsPage;
     public ReportsCoursePage reportsCoursePage;
+    public UserReportsPage userReportsPage;
     public AddGroupsPage addGroupsPage;
     public GamificationPage gamificationPage;
     public GroupPageFunctionality groupPageFunctionality;
     public UserTypes userTypes;
-
 
     @BeforeClass
     public void setUpUiTest() {
@@ -53,6 +56,7 @@ public abstract class BaseUiTest {
         webElementActions = new WebElementActions();
         adminHomePage = new AdminHomePage();
         driver = Driver.getDriver();
+        actions = new Actions(driver);
         driver.navigate().to(ConfigReader.getProperty("qa_env"));
         loginPage.fillUpUsernameAndPassword();
         categoryPage = new CategoryPage();
@@ -67,14 +71,14 @@ public abstract class BaseUiTest {
         addGroupsPage = new AddGroupsPage();
         reportsPage = new ReportsPage();
         reportsCoursePage = new ReportsCoursePage();
+        userReportsPage = new UserReportsPage();
         gamificationPage = new GamificationPage();
         groupPageFunctionality = new GroupPageFunctionality();
         userTypes = new UserTypes();
-
     }
 
-//    @AfterClass
-//    public void tearDown() {
-//        Driver.closeDriver();
-//    }
+    @AfterClass
+    public void tearDown() {
+        Driver.closeDriver();
+    }
 }
