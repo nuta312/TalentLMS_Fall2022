@@ -15,12 +15,12 @@ public class AdminHomePage extends BasePage {
     @FindBy(xpath = "(//a[contains(text(),'Add user')])[1]")
     public WebElement adminAddUserBtn;
 
-    public AdminHomePage clickAdminUserBtn(){
-        elementActions.click(adminUsersBtn);
-        return this;
+    @FindBy(xpath = "//a[@class='dropdown-toggle tl-nabvar-roles-button']//b[1]")
+    public WebElement userRoleBtn;
+
+
+
     }
-    public AdminHomePage clickAdminAddUserBtn(){
-        elementActions.click(adminAddUserBtn);
-        return this;
-    }
-}
+
+
+
