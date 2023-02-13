@@ -28,6 +28,8 @@ public class MockDataGenerator {
     public String generateMockUsername() {
         return faker.name().username();
     }
+    public  String generateMockBioDescription(){return faker.lorem().paragraph();}
+    public String generateMockAnimalName(){return  faker.animal().name();}
 
     public  String generatePassword(int length) {
         Random random = new Random();
