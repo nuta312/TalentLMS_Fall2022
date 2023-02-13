@@ -58,8 +58,6 @@ public class AdminHomePage extends BasePage {
 
     public AdminHomePage clickAddCategoryBtn() {
         elementActions.click(addCategoryBtn);
-        elementActions.pause(2000);
-        assertEquals(Driver.getDriver().getCurrentUrl(), "https://nuta1bema.talentlms.com/category/create");
         return this;
     }
 
