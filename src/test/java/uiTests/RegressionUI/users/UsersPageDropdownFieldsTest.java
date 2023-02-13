@@ -1,12 +1,18 @@
 package uiTests.RegressionUI.users;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import uiTests.BaseUiTest;
 
 import static org.testng.AssertJUnit.assertEquals;
+
+/**
+ * @author Jyrgal
+ */
+@Epic("Users")
 
 public class UsersPageDropdownFieldsTest extends BaseUiTest {
 
