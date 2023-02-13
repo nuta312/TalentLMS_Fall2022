@@ -79,6 +79,7 @@ public abstract class BaseUiTest {
         gamificationPage = new GamificationPage();
         groupPageFunctionality = new GroupPageFunctionality();
         userTypes = new UserTypes();
+        actions = new Actions(driver);
     }
 
     @AfterClass
