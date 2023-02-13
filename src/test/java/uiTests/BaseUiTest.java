@@ -3,9 +3,9 @@ package uiTests;
 import com.talentLMS.UI.dataProviders.ConfigReader;
 import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
-<<<<<<< HEAD
+
 import com.talentLMS.UI.page.coursesPage.AddCoursesPage;
-=======
+
 import com.talentLMS.UI.page.accountAndSettings.GamificationPage;
 import com.talentLMS.UI.page.coursesPage.CoursePage;
 import com.talentLMS.UI.page.groupsPage.AddGroupsPage;
@@ -13,7 +13,7 @@ import com.talentLMS.UI.page.groupsPage.GroupPageFunctionality;
 import com.talentLMS.UI.page.reports.ReportsCoursePage;
 import com.talentLMS.UI.page.reports.ReportsPage;
 import com.talentLMS.UI.page.сategory.CategoryPage;
->>>>>>> 1f221acfb2c61a9421fc4a29b13c0c5c4060a5e8
+
 import com.talentLMS.UI.page.LoginPage;
 import com.talentLMS.UI.page.coursesPage.CoursesBuyCourseFunc;
 import com.talentLMS.UI.page.userTypes.CreatePage;
@@ -29,7 +29,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public abstract class BaseUiTest {
-<<<<<<< HEAD
+
 
 
     /**
@@ -37,8 +37,7 @@ public abstract class BaseUiTest {
      */
 
     public AddCoursesPage addCoursesPage = new AddCoursesPage();
-=======
->>>>>>> 1f221acfb2c61a9421fc4a29b13c0c5c4060a5e8
+
     public LoginPage loginPage;
     public CoursePage coursePage;
     public AdminHomePage adminHomePage;
@@ -46,8 +45,8 @@ public abstract class BaseUiTest {
     public CreateCategoryPage createCategoryPage;
     public WebElementActions webElementActions;
     public WebDriver driver;
-<<<<<<< HEAD
-=======
+
+
 
     public Actions actions;
     public CoursesBuyCourseFunc coursesBuyCourseFunc;
@@ -65,7 +64,7 @@ public abstract class BaseUiTest {
     public GroupPageFunctionality groupPageFunctionality;
 
 
->>>>>>> 1f221acfb2c61a9421fc4a29b13c0c5c4060a5e8
+
     @BeforeClass
     public void setUpUiTest() {
         loginPage = new LoginPage();
@@ -76,8 +75,8 @@ public abstract class BaseUiTest {
         actions = new Actions(driver);
         driver.navigate().to(ConfigReader.getProperty("qa_env"));
         loginPage.fillUpUsernameAndPassword();
-<<<<<<< HEAD
-=======
+
+
         categoryPage = new CategoryPage();
         createCategoryPage = new CreateCategoryPage();
         coursesBuyCourseFunc = new CoursesBuyCourseFunc();
@@ -94,11 +93,11 @@ public abstract class BaseUiTest {
         groupPageFunctionality = new GroupPageFunctionality();
 
     }
->>>>>>> 1f221acfb2c61a9421fc4a29b13c0c5c4060a5e8
+
 
     }
 //    @AfterClass
 //    public void tearDown() {
 //        Driver.closeDriver();
 //    }
-}
+

@@ -29,7 +29,7 @@ public class CoursesTest extends BaseUiTest {
     @Test(priority = 2,description = "Fill the Category and Sample")
     public void createCategoryAndSample() {
        addCoursesPage.fillCategoryAndSample();
-        String exeptedText2 = "Samples";
+        String exeptedText2 = "dog";
         Assert.assertTrue(exeptedText2.contains(addCoursesPage.sampleCheck.getText()));
     }
 

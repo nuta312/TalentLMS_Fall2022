@@ -3,7 +3,7 @@ package com.talentLMS.UI.page;
 import com.talentLMS.UI.dataProviders.MockDataGenerator;
 import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
-<<<<<<< HEAD
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 /**
