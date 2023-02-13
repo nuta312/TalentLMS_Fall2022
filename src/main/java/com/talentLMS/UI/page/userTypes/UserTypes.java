@@ -6,7 +6,6 @@ import com.talentLMS.UI.page.AdminHomePage;
 import com.talentLMS.UI.page.BasePage;
 import com.talentLMS.UI.page.LoginPage;
 import jdk.jfr.Description;
-import com.talentLMS.UI.driverFactory.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.Test;
@@ -47,6 +46,15 @@ public class UserTypes extends BasePage {
 
     @FindBy(xpath = "//th[@aria-label='Learner']")
     public WebElement sortByLearner;
+
+    @FindBy(xpath = "//a[@title='Previous']")
+    public WebElement previousPage;
+
+    @FindBy(xpath = "//a[@title='Next']")
+    public WebElement nextPage;
+
+    @FindBy(xpath = "//div[@id='tl-list-user-types_paginate']//a[@data-toggle='dropdown']")
+    public WebElement pageNumberDropUp;
 
     @FindBy(xpath = "//span[@title='Admin-Type']")
     public WebElement typeOfAdminInList;
