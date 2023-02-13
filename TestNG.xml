@@ -1,15 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Smoke Test Suite" verbose="1"  parallel="classes" thread-count="1">
+<suite name="SmokeTestSuite" verbose="1" parallel="classes" thread-count="1">
     <listeners>
         <listener class-name="com.talentLMS.UI.utils.AllureReportListener"/>
     </listeners>
-    <test name="Regression Test">
+    <test name="SmokeTest">
         <classes>
-            <class name="uiTests.login.LoginTests" />
-            <class name="uiTests.category.OpenCategoryPage" />
-            <class name="uiTests.category.ActionsWithCategory" />
-            <class name="uiTests.userTest.UserTest" />
-            <class name="uiTests.accountAndSettings.HomepageTest" />
+            <class name="uiTests.login.LoginTests"/>
+            <class name="uiTests.category.OpenCategoryPageTests"/>
+            <class name="uiTests.category.ActionCategoriesTests"/>
+            <class name="uiTests.userTest.UserTest"/>
+            <class name="uiTests.accountAndSettings.HomepageTest"/>
         </classes>
     </test>
 </suite>
