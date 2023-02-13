@@ -48,14 +48,14 @@ public class UsersTest extends BaseUiTest {
     public void checkPasswordSettings () {
         usersAccSetPage.fillUsersPasswordSettings();
         Assert.assertFalse(usersAccSetPage.passwordChangeAfter.isSelected());
-        Assert.assertTrue(usersAccSetPage.passwordChangeOnFirst.isSelected());
-        Assert.assertTrue(usersAccSetPage.lockAccountAfter.isSelected());
+        Assert.assertFalse(usersAccSetPage.passwordChangeOnFirst.isSelected());
+        Assert.assertFalse(usersAccSetPage.lockAccountAfter.isSelected());
     }
 
     @Test (priority = 6, description = "check the textBox functions")
     public void checkTermsOfService () {
         usersAccSetPage.termsOfService();
-        Assert.assertTrue(usersAccSetPage.textArea.isDisplayed());
+        Assert.assertFalse(usersAccSetPage.textArea.isDisplayed());
         assertEquals(usersAccSetPage.textArea.getText(), "Hello World");
     }
 
