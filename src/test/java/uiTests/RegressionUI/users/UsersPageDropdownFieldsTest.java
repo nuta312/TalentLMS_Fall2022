@@ -11,7 +11,7 @@ import static org.testng.AssertJUnit.assertEquals;
 public class UsersPageDropdownFieldsTest extends BaseUiTest {
 
     @Test
-    @Description( "Verify that Users can click Mi info button on dropdown menu")
+    @Description( "Verify that Users can click My info button on dropdown menu")
     public void UsersPageDropdownMenuMyInfoTest() {
         actions.moveToElement(userPage.dropdownRolesBtn).perform();
         webElementActions.click(userPage.dropDownRolesMyInfo);
