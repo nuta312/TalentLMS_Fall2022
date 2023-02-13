@@ -12,27 +12,20 @@ import com.talentLMS.UI.page.reports.ReportsPage;
 import com.talentLMS.UI.page.reports.UserReportsPage;
 import com.talentLMS.UI.page.сategory.CategoryPage;
 import com.talentLMS.UI.page.LoginPage;
-import com.talentLMS.UI.page.coursesPage.CoursesBuyCourseFunc;
-import com.talentLMS.UI.page.userTypes.CreatePage;
-import com.talentLMS.UI.page.coursesPage.ViewCoursesCatalog;
-import com.talentLMS.UI.page.accountAndSettings.Homepage;
-import com.talentLMS.UI.page.AdminHomePage;
-import com.talentLMS.UI.page.users.AddUserPage;
-import com.talentLMS.UI.page.users.UserPage;
-import com.talentLMS.UI.page.сategory.CreateCategoryPage;
+import com.talentLMS.UI.page.accountAndSettings.UsersAccSetPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public abstract class BaseUiTest {
+
     public LoginPage loginPage;
-    public CoursePage coursePage;
-    public AdminHomePage adminHomePage;
-    public CategoryPage categoryPage;
-    public CreateCategoryPage createCategoryPage;
     public WebElementActions webElementActions;
     public WebDriver driver;
+
+
+    public UsersAccSetPage usersAccSetPage;
+
     public Actions actions;
     public CoursesBuyCourseFunc coursesBuyCourseFunc;
     public CreatePage createPage;
@@ -50,13 +43,12 @@ public abstract class BaseUiTest {
     @BeforeClass
     public void setUpUiTest() {
         loginPage = new LoginPage();
-        coursePage = new CoursePage();
         webElementActions = new WebElementActions();
-        adminHomePage = new AdminHomePage();
         driver = Driver.getDriver();
-        actions = new Actions(driver);
         driver.navigate().to(ConfigReader.getProperty("qa_env"));
         loginPage.fillUpUsernameAndPassword();
+        usersAccSetPage = new UsersAccSetPage();
+
         categoryPage = new CategoryPage();
         createCategoryPage = new CreateCategoryPage();
         coursesBuyCourseFunc = new CoursesBuyCourseFunc();
