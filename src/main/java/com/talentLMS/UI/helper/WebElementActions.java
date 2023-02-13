@@ -15,7 +15,10 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.*;
 
 public class WebElementActions {
+
     Actions actions = new Actions(Driver.getDriver());
+
+    WebDriver driver;
 
     public WebElementActions waitElementToBeClickAble(WebElement element){
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15))
@@ -72,10 +75,10 @@ public class WebElementActions {
         Driver.getDriver().navigate().to(URL);
         return this;
     }
-
+    
     public WebElementActions moveToMouseAction(WebElement element){
         actions.moveToElement(element).perform();
         return this;
     }
-
+    
 }
