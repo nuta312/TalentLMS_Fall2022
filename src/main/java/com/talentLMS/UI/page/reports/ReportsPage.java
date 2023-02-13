@@ -5,15 +5,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
-     * @author Kutbolsun Toktonazarov
-     */
+ * @author Kutbolsun Toktonazarov
+ */
 
-    public class ReportsPage extends BasePage {
-        @FindBy(xpath = "//div[@class='tl-ellipsis']//a[contains(text(),'Course reports')]")
-        public WebElement courseReports;
+public class ReportsPage extends BasePage {
+    @FindBy(xpath = "//div[@class='tl-ellipsis']//a[contains(text(),'Course reports')]")
+    public WebElement courseReports;
 
-        @FindBy(xpath = "//a[contains(text(),  'Reports' )]")
-        public WebElement reportBtn;
+    @FindBy(xpath = "//a[contains(text(),  'Reports' )]")
+    public WebElement reportBtn;
 
     @FindBy(xpath = "//a[@data-period='yesterday']")
     public WebElement yesterdayBtn;
@@ -46,8 +46,8 @@ import org.openqa.selenium.support.FindBy;
     public WebElement TimelineBtn;
 
 
-    public ReportsPage clickCourseReportsBtn(){
-            elementActions.click(courseReports);
-            return this;
-        }
+    public ReportsPage clickCourseReportsBtn() {
+        elementActions.click(courseReports);
+        return this;
+    }
 }

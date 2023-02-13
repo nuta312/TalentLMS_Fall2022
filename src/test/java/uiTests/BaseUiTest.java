@@ -3,6 +3,14 @@ package uiTests;
 import com.talentLMS.UI.dataProviders.ConfigReader;
 import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
+import com.talentLMS.UI.page.accountAndSettings.GamificationPage;
+import com.talentLMS.UI.page.coursesPage.CoursePage;
+import com.talentLMS.UI.page.groupsPage.AddGroupsPage;
+import com.talentLMS.UI.page.groupsPage.GroupPageFunctionality;
+import com.talentLMS.UI.page.reports.ReportsCoursePage;
+import com.talentLMS.UI.page.reports.ReportsPage;
+import com.talentLMS.UI.page.reports.UserReportsPage;
+import com.talentLMS.UI.page.сategory.CategoryPage;
 import com.talentLMS.UI.page.LoginPage;
 import com.talentLMS.UI.page.accountAndSettings.UsersAccSetPage;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +26,20 @@ public abstract class BaseUiTest {
 
     public UsersAccSetPage usersAccSetPage;
 
+    public Actions actions;
+    public CoursesBuyCourseFunc coursesBuyCourseFunc;
+    public CreatePage createPage;
+    public UserPage userPage;
+    public AddUserPage addUserPage;
+    public Homepage homepage;
+    public ViewCoursesCatalog viewCoursesCatalog;
+    public ReportsPage reportsPage;
+    public ReportsCoursePage reportsCoursePage;
+    public UserReportsPage userReportsPage;
+    public AddGroupsPage addGroupsPage;
+    public GamificationPage gamificationPage;
+    public GroupPageFunctionality groupPageFunctionality;
+
     @BeforeClass
     public void setUpUiTest() {
         loginPage = new LoginPage();
@@ -27,6 +49,21 @@ public abstract class BaseUiTest {
         loginPage.fillUpUsernameAndPassword();
         usersAccSetPage = new UsersAccSetPage();
 
+        categoryPage = new CategoryPage();
+        createCategoryPage = new CreateCategoryPage();
+        coursesBuyCourseFunc = new CoursesBuyCourseFunc();
+        createPage = new CreatePage();
+        userPage = new UserPage();
+        adminHomePage = new AdminHomePage();
+        addUserPage = new AddUserPage();
+        viewCoursesCatalog = new ViewCoursesCatalog();
+        homepage = new Homepage();
+        addGroupsPage = new AddGroupsPage();
+        reportsPage = new ReportsPage();
+        reportsCoursePage = new ReportsCoursePage();
+        userReportsPage = new UserReportsPage();
+        gamificationPage = new GamificationPage();
+        groupPageFunctionality = new GroupPageFunctionality();
     }
 
     @AfterClass
