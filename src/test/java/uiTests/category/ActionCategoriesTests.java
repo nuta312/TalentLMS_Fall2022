@@ -28,7 +28,7 @@ public class ActionCategoriesTests extends BaseUiTest {
 
 
     @Test(priority = 2)
-    @Description("Open Category From Admin page Using Title Link.")
+    @Description("Check Title When Category Table is Empty")
     @Feature("Category")
     public void openCategoryPageFromHomepageUsingTitleLink() {
         categoryPage.checkURLCategoryPage();
