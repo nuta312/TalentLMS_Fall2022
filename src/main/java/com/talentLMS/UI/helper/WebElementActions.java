@@ -85,5 +85,11 @@ public class WebElementActions {
         actions.moveToElement(element).perform();
         return this;
     }
+
+    public WebElementActions refreshPage(){
+        Driver.getDriver().navigate().refresh();
+        pause(3000);
+        return this;
+    }
     
 }
