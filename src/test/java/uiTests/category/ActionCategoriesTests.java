@@ -5,6 +5,8 @@ import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
 import uiTests.BaseUiTest;
 
+import java.util.NoSuchElementException;
+
 /**
  * @author Farrukh Ashirbaev
  */
@@ -12,10 +14,23 @@ import uiTests.BaseUiTest;
 public class ActionCategoriesTests extends BaseUiTest {
 
     @Test(priority = 1)
+    @Description("Preconditions for start Test")
+    @Feature("Category")
+    public void removeAllCategoriesForStartAutoTest() {
+        adminHomePage.clickCategoriesTxtLink();
+       try {
+           categoryPage.removeAllCategory();
+       }catch (Exception exception){
+           throw new NoSuchElementException("Table Category is Empty");
+       }
+       webElementActions.refreshPage();
+    }
+
+
+    @Test(priority = 2)
     @Description("Open Category From Admin page Using Title Link.")
     @Feature("Category")
     public void openCategoryPageFromHomepageUsingTitleLink() {
-        adminHomePage.clickCategoriesTxtLink();
         categoryPage.checkURLCategoryPage();
         categoryPage.checkCategoriesTitle();
         categoryPage.checkCategoryTxt();
@@ -23,7 +38,7 @@ public class ActionCategoriesTests extends BaseUiTest {
         createCategoryPage.checkUrlCreateCategory();
     }
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     @Description("Create Category With Using Hard Code Category Name.")
     @Feature("Category")
     public void createCategoryWithUsingOnlyCategoryName() {
@@ -32,7 +47,7 @@ public class ActionCategoriesTests extends BaseUiTest {
         categoryPage.checkURLCategoryPage();
     }
 
-    @Test(priority = 3)
+    @Test(priority = 4)
     @Description("Create Category With Using Existing Parent Name.")
     @Feature("Category")
     public void createCategoryWithUsingOnlyCategoryHardName() {
@@ -45,7 +60,7 @@ public class ActionCategoriesTests extends BaseUiTest {
         categoryPage.checkURLCategoryPage();
     }
 
-    @Test(priority = 4)
+    @Test(priority = 5)
     @Description("Create Category With Using Price Field.")
     @Feature("Category")
     public void createCategoryWithUsingPriceField() {
@@ -58,7 +73,7 @@ public class ActionCategoriesTests extends BaseUiTest {
         categoryPage.checkPriceTitle();
     }
 
-    @Test(priority = 5)
+    @Test(priority = 6)
     @Description("Create Category With Admin Page.")
     @Feature("Category")
     public void createCategoryWithMainPage() {
@@ -69,7 +84,7 @@ public class ActionCategoriesTests extends BaseUiTest {
         categoryPage.checkURLCategoryPage();
     }
 
-    @Test(priority = 6)
+    @Test(priority = 7)
     @Description("Remove All Categories After Test Case.")
     @Feature("Category")
     public void removeAllCategoriesAfterTest() {
