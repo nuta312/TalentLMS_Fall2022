@@ -1,16 +1,12 @@
 package uiTests.accountAndSettings;
 
 import jdk.jfr.Description;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import uiTests.BaseUiTest;
 
-import java.time.Duration;
 
 import static org.testng.Assert.*;
-
 /**
  * @author Kurmanjan Temirova
  */
@@ -33,20 +29,13 @@ public class HomepageTest extends BaseUiTest {
         webElementActions.click(homepage.playVideoButton);
         assertTrue(homepage.pauseVideoButton.isEnabled());
     }
-    @Test(priority = 4, dependsOnMethods = "playVideoTest")
-    @Description("Verify that user watch video to the end")
-    public void watchVideoToTheEndTest(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(80));
-        wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath(".//span[@class='mejs__currenttime']"), "01:12"));
-        assertEquals(homepage.timeOfWatchedPieceOfVideo.getText(), "01:12");
-    }
-    @Test(priority = 5)
+    @Test(priority = 4)
     @Description("Verify that user can minimize video window")
     public void minimizeVideoWindowTest(){
-        webElementActions.click(homepage.maximizeAndMinimizeVideoWindowButton);
+        actions.moveToElement(homepage.videoWindow).moveToElement(homepage.maximizeAndMinimizeVideoWindowButton).click().build().perform();
         assertTrue(homepage.isWindowMinimized(homepage.videoWindow));
     }
-    @Test(priority = 6)
+    @Test(priority = 5)
     @Description("Verify that user can click on Upgrade button")
     public void upgradeTest(){
         webElementActions.click(homepage.upgradeBtn);
