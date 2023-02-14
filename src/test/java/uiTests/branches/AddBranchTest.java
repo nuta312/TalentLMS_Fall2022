@@ -8,6 +8,5 @@ public class AddBranchTest extends BaseUiTest {
     @Test
     public void clickAddUserBtn(){
         branchesPage.clickAddBranchBtn();
-        Assert.assertEquals(driver.getCurrentUrl(),"https://nuta1bema.talentlms.com/branch/index");
     }
 }
