@@ -4,7 +4,6 @@ import com.talentLMS.UI.dataProviders.ConfigReader;
 import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
 import com.talentLMS.UI.page.accountAndSettings.GamificationPage;
-import com.talentLMS.UI.page.branches.BranchesPage;
 import com.talentLMS.UI.page.coursesPage.CoursePage;
 import com.talentLMS.UI.page.groupsPage.AddGroupsPage;
 import com.talentLMS.UI.page.groupsPage.GroupPageFunctionality;
@@ -53,7 +52,6 @@ public abstract class BaseUiTest {
     public CategoryPage categoryPage;
     public CreateCategoryPage createCategoryPage;
     public UserTypes userTypes;
-    public BranchesPage branchesPage;
 
 
     @BeforeClass
@@ -81,8 +79,6 @@ public abstract class BaseUiTest {
         gamificationPage = new GamificationPage();
         groupPageFunctionality = new GroupPageFunctionality();
         userTypes = new UserTypes();
-        actions = new Actions(driver);
-        branchesPage = new BranchesPage();
     }
 
     @AfterClass

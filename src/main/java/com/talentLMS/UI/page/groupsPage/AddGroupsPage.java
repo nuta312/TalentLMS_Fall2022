@@ -30,55 +30,8 @@ public class AddGroupsPage extends BasePage {
         public WebElement CourseGroupMemberText;
         @FindBy(xpath = "(//a[contains(text(), 'Groups')])[1]")
         public WebElement groupsBtnOnHomePage;
-        @FindBy(xpath = "//a[@title='Groups']")
-        public WebElement groupBtn;
         @FindBy(xpath = "//td[@class=' tl-align-left']")
         public List<WebElement> webTableOfGroups;
-        @FindBy(xpath = "//a[@id='show-key']")
-        public WebElement groupKeyBtn;
-        @FindBy(xpath = "//a[@id='show-price']")
-        public WebElement groupPriceBtn;
-        @FindBy(xpath = "//input[@name='group_key']")
-        public WebElement inputKeyOfGroup;
-        @FindBy(xpath = "//input[@name='price']")
-        public WebElement inputPriceOfGroup;
-        @FindBy(xpath = "//div[@class='toast-message']")
-        public WebElement textOfSuccsefullyAddedGroup;
-        @FindBy(xpath = "(//td[@class=' tl-align-center tl-table-operations-cell'])[2]")
-        public WebElement triplePoint;
-        @FindBy(xpath = "(//i[@alt='Delete'])[2]")
-        public WebElement removeBtn;
-        @FindBy(xpath = "//a[@id='tl-confirm-submit']")
-        public WebElement submitRemoveBtn;
-        @FindBy(xpath = "(//i[@class='icon-pencil icon-grid'])[2]")
-        public WebElement editGroupBtn;
-        @FindBy(xpath = "//a[contains(text(), 'Users')]")
-        public WebElement userBtn;
-        public AddGroupsPage clickGroupBtn () {
-            groupsBtnOnHomePage.click();
-            return this;
-        }
-
-        public AddGroupsPage clickEditGroupBtn() {
-            editGroupBtn.click();
-            return this;
-        }
-
-        public AddGroupsPage clickRemoveBtn() {
-            removeBtn.click();
-            submitRemoveBtn.click();
-            return this;
-        }
-
-        public AddGroupsPage clickGroupPriceBtn() {
-            groupPriceBtn.click();
-            return this;
-        }
-
-        public AddGroupsPage clickGroupKeyBtn() {
-            groupKeyBtn.click();
-            return this;
-        }
 
         public com.talentLMS.UI.page.groupsPage.AddGroupsPage clickGroupsBtnOnHomePage() {
             groupsBtnOnHomePage.click();
