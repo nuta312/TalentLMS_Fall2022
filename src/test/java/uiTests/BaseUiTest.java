@@ -9,6 +9,7 @@ import com.talentLMS.UI.page.groupsPage.AddGroupsPage;
 import com.talentLMS.UI.page.groupsPage.GroupPageFunctionality;
 import com.talentLMS.UI.page.reports.ReportsCoursePage;
 import com.talentLMS.UI.page.reports.ReportsPage;
+import com.talentLMS.UI.page.users.InstructorHomePage;
 import com.talentLMS.UI.page.reports.UserReportsPage;
 import com.talentLMS.UI.page.userTypes.UserTypes;
 import com.talentLMS.UI.page.сategory.CategoryPage;
@@ -47,6 +48,7 @@ public abstract class BaseUiTest {
     public AddGroupsPage addGroupsPage;
     public GamificationPage gamificationPage;
     public GroupPageFunctionality groupPageFunctionality;
+    public InstructorHomePage instructorHomePage;
     public CoursePage coursePage;
     public AdminHomePage adminHomePage;
     public CategoryPage categoryPage;
@@ -78,6 +80,7 @@ public abstract class BaseUiTest {
         userReportsPage = new UserReportsPage();
         gamificationPage = new GamificationPage();
         groupPageFunctionality = new GroupPageFunctionality();
+        instructorHomePage = new InstructorHomePage();
         userTypes = new UserTypes();
         actions = new Actions(driver);
     }
