@@ -8,6 +8,7 @@ import org.testng.Assert;
 
 import java.security.PublicKey;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * @author Farrukh Ashirbaev
@@ -122,7 +123,7 @@ public class CategoryPage extends BasePage {
                 moveToCategoryLine();
                 removeCategoryLine();
             } else {
-                elementActions.assertUrlPage(categoryURL);
+                throw new NoSuchElementException();
             }
         }
         return this;

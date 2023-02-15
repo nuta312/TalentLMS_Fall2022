@@ -18,12 +18,13 @@ public class ActionCategoriesTests extends BaseUiTest {
     @Feature("Category")
     public void removeAllCategoriesForStartAutoTest() {
         adminHomePage.clickCategoriesTxtLink();
-       try {
-           categoryPage.removeAllCategory();
-       }catch (Exception exception){
-           throw new NoSuchElementException("Table Category is Empty");
-       }
-       webElementActions.refreshPage();
+        categoryPage.checkURLCategoryPage();
+        try {
+            categoryPage.removeAllCategory();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        webElementActions.refreshPage();
     }
 
 
