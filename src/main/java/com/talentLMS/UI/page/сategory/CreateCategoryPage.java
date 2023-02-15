@@ -10,7 +10,6 @@ import java.util.List;
  * @author Farrukh Ashirbaev
  */
 public class CreateCategoryPage extends BasePage {
-
     String createCategoryUrl = "https://nuta1bema.talentlms.com/category/create";
     String temporaryName = mock.generateMockAnimalName();
     String bigCategory = "BigCategory";
