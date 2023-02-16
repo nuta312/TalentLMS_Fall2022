@@ -1,8 +1,12 @@
 package com.talentLMS.UI.page.users;
 
 import com.talentLMS.UI.page.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -10,6 +14,7 @@ import org.openqa.selenium.support.FindBy;
  */
 
 public class UserPage extends BasePage {
+    public List<String> userNameList = new ArrayList<>();
     @FindBy(xpath = "//th[@class='tl-align-left sorting']")
     public WebElement columnUser;
 
@@ -130,14 +135,57 @@ public class UserPage extends BasePage {
 
     @FindBy(xpath = "//input[@id='tl-spotlight']")
     public WebElement dropDownInputField;
-
-
     @FindBy(xpath = "(//a[@id='navbar-logout'])[2]")
     public WebElement dropDownLogOutBtn;
+    @FindBy(xpath = "//td[@class=' tl-align-left']//span[@title]")
+    public List<WebElement> allUserName;
+    @FindBy(xpath = "//table[@id='tl-users-grid']/tbody")
+    public List<WebElement> allUserList;
 
+    @FindBy(xpath = "//td[@class=' tl-align-left hidden-phone']/span")
+    public List<WebElement> allStatusOfUsers;
+    @FindBy(xpath = "//div[@class='tl-table-operations-trigger touchable']")
+    public List<WebElement> allOptionBtn;
+    @FindBy(xpath = "//div[@id='tl-confirm']/div[@class='modal-footer']/a[1]")
+    public WebElement deleteOkBtn;
+    @FindBy(xpath = "//i[@class='icon-remove icon-grid']")
+    public List<WebElement> allDeleteBtn;
 
     public UserPage clickAddUserBtn() {
         elementActions.click(addUserBtn);
         return this;
     }
+    public UserPage findNewUser() {
+        for (WebElement userName:allUserName) {
+            userNameList.add(userName.getText());
+        }
+        return this;
+    }
+    public UserPage deletingUser() {
+        for (WebElement option : allOptionBtn) {
+            elementActions.moveToMouseAction(option);
+            option.findElement(By.xpath("//i[@class='icon-remove icon-grid']")).click();
+            elementActions.waitElementToBeClickAble(deleteOkBtn);
+            elementActions.click(deleteOkBtn);
+        }
+        return this;
+    }
+
+    public UserPage deletingUser2(){
+        for (WebElement userList : allUserList) {
+            elementActions.moveToMouseAction(userList);
+            for (WebElement statusOfUser : allStatusOfUsers) {
+                elementActions.moveToMouseAction(statusOfUser);
+                if (!statusOfUser.getText().equals("SuperAdmin")) {
+                    for (WebElement toDeleteBtn : allDeleteBtn) {
+                        elementActions.click(toDeleteBtn);
+                        elementActions.waitElementToBeClickAble(deleteOkBtn);
+                        deleteOkBtn.click();
+                    }
+                } else System.out.println("You are SuperAdmin");
+            }
+        }
+        return this;
+    }
+
 }

@@ -82,8 +82,8 @@ public abstract class BaseUiTest {
         actions = new Actions(driver);
     }
 
-    @AfterClass
-    public void tearDown() {
-        Driver.closeDriver();
-    }
+//    @AfterClass
+//    public void tearDown() {
+//        Driver.closeDriver();
+//    }
 }

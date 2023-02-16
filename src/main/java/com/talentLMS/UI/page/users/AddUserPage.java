@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.Select;
  */
 
 public class AddUserPage extends BasePage {
+    public String firstName = mock.generateMockFirstname();
+    public String lastName = mock.generateMockLastName();
 
     @FindBy(xpath = "//input[@name='name']")
     public WebElement firstNameInput;
@@ -47,7 +49,8 @@ public class AddUserPage extends BasePage {
     public WebElement successMessage;
     @FindBy(xpath = "//a[@title='Home']")
     public WebElement homeBtn;
-
+    @FindBy(xpath = "//a[@title='Users']")
+    public WebElement usersBtn;
     @FindBy(xpath = "//div[@class='toast-message']")
     public WebElement errMessageLimit;
 
@@ -57,15 +60,13 @@ public class AddUserPage extends BasePage {
     }
 
     public AddUserPage createNewUser() {
-        Select select = new Select(selectOptions);
-        elementActions.sendKeys(firstNameInput, mock.generateMockFirstname())
-                .sendKeys(lastNameInput, mock.generateMockLastName())
+          elementActions.sendKeys(firstNameInput, firstName)
+                .sendKeys(lastNameInput, lastName)
                 .sendKeys(emailInput, mock.generateMockEmail())
                 .sendKeysWithClear(usernameInput, mock.generateMockUsername())
                 .sendKeys(passwordInput, "ABaaabb34$")
                 .sendKeys(bioDescriptions, mock.generateMockBioDescription());
-        select.selectByVisibleText("Admin-Type");
-        return this;
+          return this;
     }
     public AddUserPage clickActiveBtn(){
         elementActions.click(activeCheckBox);
@@ -77,6 +78,10 @@ public class AddUserPage extends BasePage {
     }
     public AddUserPage clickSubmitAddUserBtn(){
         elementActions.click(submitAddUserBtn);
+        return this;
+    }
+    public AddUserPage clickUsersBtn(){
+        elementActions.click(usersBtn);
         return this;
     }
 

@@ -14,6 +14,7 @@ public class AdminHomePage extends BasePage {
 
 
     public AdminHomePage clickAddUserBtn () {
+        elementActions.waitElementToBeClickAble(addUserBtn);
         elementActions.click(addUserBtn);
         return this;
     }
