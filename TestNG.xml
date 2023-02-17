@@ -8,8 +8,21 @@
             <class name="uiTests.login.LoginTests"/>
             <class name="uiTests.category.OpenCategoryPageTests"/>
             <class name="uiTests.category.ActionCategoriesTests"/>
-            <class name="uiTests.userTest.UserTest"/>
+            <class name="uiTests.accountAndSettings.UsersTest"/>
             <class name="uiTests.accountAndSettings.HomepageTest"/>
+            <class name="uiTests.accountAndSettings.GamificationPageTest"/>
+            <class name="uiTests.coursesPage.ViewCoursesCatalogTest"/>
+            <class name="uiTests.coursesTest.MainCourse"/>
+            <class name="uiTests.coursesTest.TestForBuyCourses"/>
+            <class name="uiTests.groups.AddGroupTest"/>
+            <class name="uiTests.groups.GroupTest"/>
+            <class name="uiTests.RegressionUI.users.AddUserTest"/>
+            <class name="uiTests.RegressionUI.users.InstructorPageTest"/>
+            <class name="uiTests.RegressionUI.users.UsersPageDropdownFieldsTest"/>
+            <class name="uiTests.reports.CourseReportsTest"/>
+            <class name="uiTests.reports.ReportTests"/>
+            <class name="uiTests.reports.userReportsTest"/>
+            <class name="uiTests.userTypes.CreatePageTest"/>
         </classes>
     </test>
 </suite>
