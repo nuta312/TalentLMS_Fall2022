@@ -182,7 +182,7 @@ public class UserPage extends BasePage {
                         elementActions.waitElementToBeClickAble(deleteOkBtn);
                         deleteOkBtn.click();
                     }
-                } else System.out.println("You are SuperAdmin");
+                } else System.out.println("Hi, You are SuperAdmin");
             }
         }
         return this;
