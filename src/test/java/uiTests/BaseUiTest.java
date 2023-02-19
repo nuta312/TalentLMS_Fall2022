@@ -5,6 +5,7 @@ import com.talentLMS.UI.driverFactory.Driver;
 import com.talentLMS.UI.helper.WebElementActions;
 import com.talentLMS.UI.page.accountAndSettings.GamificationPage;
 import com.talentLMS.UI.page.coursesPage.CoursePage;
+import com.talentLMS.UI.page.coursesPage.GroupFuncAiNu;
 import com.talentLMS.UI.page.groupsPage.AddGroupsPage;
 import com.talentLMS.UI.page.groupsPage.GroupPageFunctionality;
 import com.talentLMS.UI.page.reports.ReportsCoursePage;
@@ -54,6 +55,7 @@ public abstract class BaseUiTest {
     public CategoryPage categoryPage;
     public CreateCategoryPage createCategoryPage;
     public UserTypes userTypes;
+    public GroupFuncAiNu groupFunc;
 
 
     @BeforeClass
@@ -83,6 +85,7 @@ public abstract class BaseUiTest {
         instructorHomePage = new InstructorHomePage();
         userTypes = new UserTypes();
         actions = new Actions(driver);
+        groupFunc = new GroupFuncAiNu();
     }
 
     @AfterClass
