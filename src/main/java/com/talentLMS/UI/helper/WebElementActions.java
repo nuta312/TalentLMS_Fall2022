@@ -38,6 +38,11 @@ public class WebElementActions {
         return this;
     }
 
+    public WebElementActions getElements (WebElement element){
+        getElements(element);
+        return this;
+    }
+
     public WebElementActions sendKeys(WebElement element,String txt){
         waitElementToBeDisplayed(element);
         element.sendKeys(txt);
@@ -78,6 +83,17 @@ public class WebElementActions {
     
     public WebElementActions moveToMouseAction(WebElement element){
         actions.moveToElement(element).perform();
+        return this;
+    }
+
+    public WebElementActions moveToElement (WebElement element){
+        actions.moveToElement(element).perform();
+        return this;
+    }
+    
+    public WebElementActions refreshPage(){
+        Driver.getDriver().navigate().refresh();
+        pause(3000);
         return this;
     }
     
