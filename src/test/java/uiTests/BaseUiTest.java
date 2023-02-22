@@ -12,6 +12,7 @@ import com.talentLMS.UI.page.reports.ReportsPage;
 import com.talentLMS.UI.page.users.InstructorHomePage;
 import com.talentLMS.UI.page.reports.UserReportsPage;
 import com.talentLMS.UI.page.userTypes.UserTypes;
+import com.talentLMS.UI.page.users.LearnerHomePage;
 import com.talentLMS.UI.page.сategory.CategoryPage;
 import com.talentLMS.UI.page.LoginPage;
 import com.talentLMS.UI.page.coursesPage.CoursesBuyCourseFunc;
@@ -54,6 +55,7 @@ public abstract class BaseUiTest {
     public CategoryPage categoryPage;
     public CreateCategoryPage createCategoryPage;
     public UserTypes userTypes;
+    public LearnerHomePage learnerHomePage;
 
 
     @BeforeClass
@@ -83,6 +85,9 @@ public abstract class BaseUiTest {
         instructorHomePage = new InstructorHomePage();
         userTypes = new UserTypes();
         actions = new Actions(driver);
+        learnerHomePage = new LearnerHomePage();
+        webElementActions.moveToElement(learnerHomePage.dropDownBtn);
+        webElementActions.click(learnerHomePage.learnerType);
     }
 
     @AfterClass
