@@ -106,7 +106,7 @@ public class AddUserPage extends BasePage {
                 .sendKeys(bioDescriptions, mock.generateMockBioDescription());
         return this;
     }
-    public AddUserPage clickActiveBtn(){git
+    public AddUserPage clickActiveBtn(){
         elementActions.click(activeCheckBox);
         return this;
     }
