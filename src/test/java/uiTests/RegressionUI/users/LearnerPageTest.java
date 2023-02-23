@@ -3,6 +3,8 @@ package uiTests.RegressionUI.users;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import uiTests.BaseUiTest;
 
@@ -14,6 +16,11 @@ import static org.testng.Assert.assertTrue;
 
 @Epic("Learner")
 public class LearnerPageTest extends BaseUiTest {
+    @BeforeClass
+    public void setUp(){
+        webElementActions.moveToElement(learnerHomePage.dropDownBtn);
+        webElementActions.click(learnerHomePage.learnerType);
+    }
 
 
         @Test(priority = 1)

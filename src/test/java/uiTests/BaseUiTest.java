@@ -86,8 +86,7 @@ public abstract class BaseUiTest {
         userTypes = new UserTypes();
         actions = new Actions(driver);
         learnerHomePage = new LearnerHomePage();
-        webElementActions.moveToElement(learnerHomePage.dropDownBtn);
-        webElementActions.click(learnerHomePage.learnerType);
+
     }
 
     @AfterClass
