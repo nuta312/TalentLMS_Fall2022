@@ -83,11 +83,13 @@ public class UserTypes extends BasePage {
         driver = Driver.getDriver();
         driver.navigate().to(ConfigReader.getProperty("qa_env"));
         loginPage.fillUpUsernameAndPassword();
-        elementActions.click(userTypesTitleLink);
+        userTypesTitleLink.click();
         elementActions.pause(3000);
-        elementActions.click(adminHomePage.logoLinkToHomePage);
-        elementActions.pause(3000);
-        elementActions.click(userTypesIconLink);
+//        elementActions.click(userTypesTitleLink);
+//        elementActions.pause(3000);
+//        elementActions.click(adminHomePage.logoLinkToHomePage);
+//        elementActions.pause(3000);
+//        elementActions.click(userTypesIconLink);
     }
 
 

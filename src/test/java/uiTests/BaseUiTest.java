@@ -81,8 +81,8 @@ public abstract class BaseUiTest {
         userTypes = new UserTypes();
     }
 
-    @AfterClass
-    public void tearDown() {
-        Driver.closeDriver();
-    }
+//    @AfterClass
+//    public void tearDown() {
+//        Driver.closeDriver();
+//    }
 }

@@ -59,14 +59,20 @@ public class Salaries {
 //    }
 
 
-//    public static List<Salaries> getColumnsNames(String tableName) throws SQLException {
-//        String query = "select column_name from information_schema.columns where table_name = ?;";
-//        ResultSet rs = DBConnection.query(query, tableName);
-//        if (!rs.next()) return null;
-//        return new BeanProcessor().toBeanList(rs, Salaries.class);
-//    }
+    public static List<String> getColumnNames(String dbName, String tableName) throws SQLException {
+        String query = "select * from " + dbName + "." + tableName + ";";
+        ResultSet rs = DBConnection.query(query);
+        ResultSetMetaData rsmd = rs.getMetaData();
+        int columnCount = rsmd.getColumnCount();
+        List<String> columnsNamesList = new ArrayList<>();
+        for (int i = 1; i <= columnCount; i++) {
+            String columnName = rsmd.getColumnName(i);
+            columnsNamesList.add(columnName);
+        }
+        return columnsNamesList;
+    }
 
-    public static List<String > getColumnsNames(String tableName) throws SQLException {
+    public static List<String > getColumnNamesTable(String tableName) throws SQLException {
         String query = "select column_name from information_schema.columns where table_name = '" + tableName + "';";
         ResultSet rs = DBConnection.query(query);
         List<String> columnData = new ArrayList<>();

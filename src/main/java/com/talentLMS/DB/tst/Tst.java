@@ -6,6 +6,7 @@ import org.testng.Assert;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Tst {
@@ -35,13 +36,24 @@ public class Tst {
 //        System.out.println(Salaries.getCount());
 
 
-//        Salaries.getColumnsNames("salaries").forEach(System.out::println);
+//        Salaries.getColumnNames("salaries").forEach(System.out::println);
+
+        System.out.println("\n" + Salaries.getColumnNames("employees", "titles"));
 //        for (String e : Salaries.getColumnsNames("salaries")) {
 //            System.out.println(e);
 //        }
 
-        System.out.println("\tAll column names in 'Salary' table:");
-        Salaries.getColumnsNames("salaries").forEach(System.out::println);
+//        System.out.println("\tAll column names in 'Salary' table:");
+//        Salaries.getColumnsNamesTable("salaries").forEach(System.out::println);
+
+//        List<String> expSalaryList = new ArrayList<>();
+//        expSalaryList.add("emp_no");
+//        expSalaryList.add("salary");
+//        expSalaryList.add("from_date");
+//        expSalaryList.add("to_date");
+//        Assert.assertEquals(Salaries.getColumnNames("employees", "salaries"), expSalaryList);
+
+        System.out.println(Salaries.getColumnNames("employees", "departments"));
 
     }
 
