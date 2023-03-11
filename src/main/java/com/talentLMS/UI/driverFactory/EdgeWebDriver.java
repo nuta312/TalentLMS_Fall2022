@@ -14,16 +14,19 @@ public class EdgeWebDriver {
 
     public static WebDriver loadEdgeDriver(){
         WebDriverManager.edgedriver().setup();
-        WebDriver driver = new EdgeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        driver.manage().deleteAllCookies();
-        
-         EdgeOptions options = new EdgeOptions();
+        EdgeOptions options = new EdgeOptions();
+        options.addArguments("--disable-extensions");
+        options.addArguments("--start-maximized");
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--no-sandbox");
+
         if (Boolean.parseBoolean(ConfigReader.getProperty("headless"))){
             options.addArguments("--headless");
         }
 
+        EdgeDriver driver = new EdgeDriver(options);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().window().maximize();
         return driver;
     }
 }
