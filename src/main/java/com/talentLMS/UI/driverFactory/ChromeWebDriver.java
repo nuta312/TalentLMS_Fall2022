@@ -16,6 +16,7 @@ public class ChromeWebDriver {
     public static WebDriver loadChromeDriver() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
         options.addArguments("--disable-extensions");
         options.addArguments("--start-maximized");
         options.addArguments("--window-size=1920,1080");
