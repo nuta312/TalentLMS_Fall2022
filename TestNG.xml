@@ -18,6 +18,5 @@
             <class name="uiTests.RegressionUI.users.UsersPageDropdownFieldsTest"/>
             <class name="uiTests.RegressionUI.users.LearnerPageTest"/>
         </classes>
-
     </test>
 </suite>
