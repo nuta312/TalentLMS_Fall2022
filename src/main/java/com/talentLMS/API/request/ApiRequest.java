@@ -2,17 +2,19 @@ package com.talentLMS.API.request;
 
 import com.talentLMS.UI.dataProviders.ConfigReader;
 import io.restassured.RestAssured;
+import io.restassured.authentication.PreemptiveBasicAuthScheme;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
 
 @Slf4j
+@Data
 public abstract class ApiRequest {
-    //    String url = "https://{{domain}}/api/v1/branches";
     protected String URL;
     protected Map<String, String> headers;
     public Response response;
@@ -21,8 +23,11 @@ public abstract class ApiRequest {
     public ApiRequest(String url, Map<String, String> headers) {
         this.headers = headers;
         this.URL = url;
+        PreemptiveBasicAuthScheme authScheme = new PreemptiveBasicAuthScheme();
+        authScheme.setUserName(ConfigReader.getProperty("apiKey"));
         specification = new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)
+                .setAuth(authScheme)
                 .setBaseUri(this.URL)
                 .setAccept(ContentType.JSON)
                 .addHeaders(this.headers)
@@ -40,42 +45,61 @@ public abstract class ApiRequest {
         return endPoint.substring(0, endPoint.length() - 1);
     }
 
+    public ApiRequest logResponse() {
+        log.warn("Response is:");
+        log.warn(getResponse().getBody().asString());
+        log.warn(String.valueOf(getResponse().getStatusCode()));
+        return this;
+    }
+
     public Response get(String endPoint) {
-        System.out.printf("Performing get %s", endPoint);
-        return this.response = RestAssured.given()
+        log.info("Perform get request: {}", endPoint);
+        this.response = RestAssured.given()
                 .spec(this.specification)
-                .auth()
-                .basic(ConfigReader.getProperty("apiKey"), "")
                 .get(endPoint);
+        logResponse();
+        return this.response;
     }
 
     public Response post(String endPoint, String body) {
-        return this.response = RestAssured.given()
-                .auth()
-                .basic(ConfigReader.getProperty("apiKey"), "")
+        log.info("Perform post request: {}", endPoint);
+        log.info("Body is: {}", body);
+        this.response = RestAssured.given()
                 .spec(specification)
                 .body(body)
-                .post();
+                .post(endPoint);
+        logResponse();
+        return this.response;
     }
 
     public Response delete(String endPoint) {
-        return this.response = RestAssured.given()
+        log.info("Perform delete request: {}", endPoint);
+        this.response = RestAssured.given()
                 .spec(specification)
-                .delete();
+                .delete(endPoint);
+        logResponse();
+        return this.response;
     }
 
     public Response put(String endPoint, String body) {
-        return this.response = RestAssured.given()
+        log.info("Perform put request: {}", endPoint);
+        log.info("Body is: {}", body);
+        this.response = RestAssured.given()
                 .spec(specification)
                 .body(body)
-                .put();
+                .put(endPoint);
+        return this.response;
     }
 
     public Response patch(String endPoint, String body) {
-        return this.response = RestAssured.given()
+        log.info("Perform patch request: {}", endPoint);
+        log.info("Body is: {}", body);
+        this.response = RestAssured.given()
                 .spec(specification)
                 .body(body)
-                .patch();
+                .patch(endPoint);
+        logResponse();
+        return this.response;
     }
 
 }

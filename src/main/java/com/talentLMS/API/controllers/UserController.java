@@ -2,13 +2,10 @@ package com.talentLMS.API.controllers;
 
 import com.talentLMS.API.request.ApiRequest;
 import io.restassured.response.Response;
-import lombok.Getter;
 
 import static com.talentLMS.API.talentLmsApi.EndPoints.*;
 
 public class UserController extends ApiRequest {
-    @Getter
-    public Response response;
 
     public UserController(String url) {
         super(url, BASE_HEADERS);
