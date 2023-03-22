@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static com.talentLMS.API.talentLmsApi.EndPoints.EMAIL;
+import static com.talentLMS.API.talentLmsApi.EndPoints.ID;
 import static java.net.HttpURLConnection.HTTP_CREATED;
 import static java.net.HttpURLConnection.HTTP_OK;
 import static org.testng.AssertJUnit.assertEquals;
@@ -16,6 +18,7 @@ import static org.testng.AssertJUnit.assertEquals;
 public class UsersApiTest extends BaseApiTest {
     private UserController userController;
     private Response response;
+    private User[] users;
 
 
     @BeforeClass
@@ -23,11 +26,30 @@ public class UsersApiTest extends BaseApiTest {
         userController = talentController.getUserController();
     }
 
-    @Test
+    @Test(priority = 1)
     public void receiveUsersTest() {
-        User[] users = userController.getUsers().as(User[].class);
+        users = userController.getUsers().as(User[].class);
         assertEquals(ADMIN_NAME, users[0].getFirstName());
         ApiAsserts.assertThatResponse(userController.getResponse())
-                .isCorrectHttpStatusCode(HTTP_CREATED);
+                .isCorrectHttpStatusCode(HTTP_OK)
+                .fieldOfUser(ADMIN_NAME);
+    }
+    @Test(dependsOnMethods = "receiveUsersTest")
+    public void receiveUserTestWithEmail(){
+        for (User user:users) {
+           userController.getUserBy(EMAIL,user.getEmail());
+
+            ApiAsserts.assertThatResponse(userController.getResponse())
+                    .isCorrectHttpStatusCode(HTTP_OK);
+        }
+    }
+    @Test(dependsOnMethods = "receiveUsersTest")
+    public void receiveUserTestWithId(){
+        for (User user:users) {
+            userController.getUserBy(ID,user.getId());
+
+            ApiAsserts.assertThatResponse(userController.getResponse())
+                    .isCorrectHttpStatusCode(HTTP_OK);
+        }
     }
 }

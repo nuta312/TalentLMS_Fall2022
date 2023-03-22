@@ -10,6 +10,7 @@ import io.restassured.specification.RequestSpecification;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
@@ -43,6 +44,13 @@ public abstract class ApiRequest {
             endPoint.append(arg).append(SLASH);
         }
         return endPoint.substring(0, endPoint.length() - 1);
+    }
+    public static String formatParameters(HashMap<String, String> parameters) {
+        StringBuilder query = new StringBuilder("?");
+        for (Map.Entry<String, String> entry : parameters.entrySet()) {
+            query.append(entry.getKey() + "=" + entry.getValue() + "&");
+        }
+        return query.deleteCharAt(query.length() - 1).toString();
     }
 
     public ApiRequest logResponse() {
