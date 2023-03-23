@@ -38,4 +38,6 @@ public class User {
     String bio;
     @JsonProperty("login_key")
     String loginKey;
+    String password;
+
 }

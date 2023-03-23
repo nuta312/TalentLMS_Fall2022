@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeSuite;
 
 @Slf4j
 public class BaseApiTest {
-    protected static final String ADMIN_NAME = "AMAN";
+    protected static final String ADMIN_NAME = "AMA232323N";
     protected BaseTalentController talentController = new BaseTalentController();
 
     @BeforeSuite

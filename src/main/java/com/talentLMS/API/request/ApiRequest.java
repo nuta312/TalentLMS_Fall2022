@@ -13,6 +13,9 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.talentLMS.API.talentLmsApi.EndPoints.API;
+import static com.talentLMS.API.talentLmsApi.EndPoints.V1;
+
 @Slf4j
 @Data
 public abstract class ApiRequest {
@@ -37,6 +40,7 @@ public abstract class ApiRequest {
     }
 
     public static final String SLASH = "/";
+    protected static String[] DEFAULT_ENDPOINTS = {API, V1};
 
     public static String getEndpoint(String... args) {
         StringBuilder endPoint = new StringBuilder();
@@ -45,6 +49,7 @@ public abstract class ApiRequest {
         }
         return endPoint.substring(0, endPoint.length() - 1);
     }
+
     public static String formatParameters(HashMap<String, String> parameters) {
         StringBuilder query = new StringBuilder("?");
         for (Map.Entry<String, String> entry : parameters.entrySet()) {
@@ -84,6 +89,17 @@ public abstract class ApiRequest {
         log.info("Perform delete request: {}", endPoint);
         this.response = RestAssured.given()
                 .spec(specification)
+                .delete(endPoint);
+        logResponse();
+        return this.response;
+    }
+
+    public Response delete(String endPoint, String body) {
+        log.info("Perform delete request: {}", endPoint);
+        log.info("Body is: {}", body);
+        this.response = RestAssured.given()
+                .spec(specification)
+                .body(body)
                 .delete(endPoint);
         logResponse();
         return this.response;

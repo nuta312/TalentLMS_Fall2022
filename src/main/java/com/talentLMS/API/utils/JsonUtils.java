@@ -13,4 +13,12 @@ public class JsonUtils {
             throw new RuntimeException(e);
         }
     }
+
+    public static String convertObjectToJson(Object object) {
+        try {
+            return objectMapper.writeValueAsString(object);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
